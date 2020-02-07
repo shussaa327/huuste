@@ -14,3 +14,19 @@
  *= require_self
  */
 @import "bootstrap";
+
+//top-page
+
+.main-visual{
+  height: 300px;
+  background-image: image-url("huuste_top_img.jpeg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  h1{
+  color: white;
+  line-height: 300px;
+  }
+}
+
+//top-page
