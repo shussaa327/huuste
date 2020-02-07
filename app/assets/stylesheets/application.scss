@@ -19,14 +19,33 @@
 
 .main-visual{
   height: 300px;
-  background-image: image-url("huuste_top_img.jpeg");
+  background-image: image-url("top-happy-img.jpeg");
   background-size: cover;
   background-position: center;
-  text-align: center;
-  h1{
+  h1,h2{
   color: white;
-  line-height: 300px;
+  margin: 0 auto;
   }
 }
 
 //top-page
+
+//about-page
+
+.concept-section{
+  height: 300px;
+  background-image: image-url("about-cheers-img.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.how-to-section{
+  height: 300px;
+  background-image: image-url("");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+//about-page
