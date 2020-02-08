@@ -2,12 +2,25 @@ class PostsController < ApplicationController
   def index
   end
 
-  def show
+  def new
+    @post = Post.new
   end
 
-  def new
+  def create
+    post = Post.new(post_params)
+    post.save
+    redirect_to user_path(current_user)
   end
 
   def edit
+  end
+
+  def show
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:comment, :rating)
   end
 end
