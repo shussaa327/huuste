@@ -2,6 +2,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
   def change
     create_table :posts do |t|
       t.text :comment
+      t.string :image_id
       t.integer :rating
       t.integer :post_user_id
       t.integer :post_shop_id
