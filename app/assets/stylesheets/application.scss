@@ -34,18 +34,19 @@
 
 .concept-section{
   height: 300px;
-  background-image: image-url("about-cheers-img.jpg");
+  background-image: image-url("about-main-img.jpeg");
   background-size: cover;
   background-position: center;
-  text-align: center;
+  h2,p{
+  color: white;
+  margin: 0 auto;
+  }
 }
 
 .how-to-section{
-  height: 300px;
-  background-image: image-url("");
-  background-size: cover;
-  background-position: center;
-  text-align: center;
+  h2{
+  margin: 0 auto;
+  }
 }
 
 //about-page
