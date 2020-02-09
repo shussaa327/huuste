@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_02_06_091334) do
 
   create_table "post_images", force: :cascade do |t|
+    t.string "post_image_id"
     t.integer "user_id"
     t.integer "shop_id"
     t.integer "post_id"
@@ -22,9 +23,10 @@ ActiveRecord::Schema.define(version: 2020_02_06_091334) do
 
   create_table "posts", force: :cascade do |t|
     t.text "comment"
+    t.string "image_id"
     t.integer "rating"
-    t.integer "post_user_id"
-    t.integer "post_shop_id"
+    t.integer "user_id"
+    t.integer "shop_id"
     t.integer "post_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

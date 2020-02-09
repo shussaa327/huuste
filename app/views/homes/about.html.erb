@@ -1,11 +1,36 @@
-<div class= "container">
-  <div class= "row concept-section">
+<div class= "jumbotron jumbotron-fuid concept-section">
+  <div class= "container text-center">
     <h2>Huusteとは？</h2>
+    <p>Huusteは　「humanity × taste」<br>
+      投稿する「人」に注目した飲食店情報の投稿サイト。様々な価値観を持つ人が共感し、繋がりその人の食を知る。
+      ユーザー全体でのお店への評価ではなく、お店について投稿している人がどんな価値観を大事にしているのかを軸に飲食店の情報を共有するサイトです。</p>
   </div>
+</div>
+<div class= "container">
   <div class= "row how-to-section">
     <h2>使い方</h2>
   </div>
   <div class= "row">
-    <%= link_to "はじめる",new_user_registration_path %>
+    <div class= "col-6">
+      <h4>人と繋がる</h4>
+      <p>自分が大事にしている価値観、普段の考え方等まずは食だけにとらわれず気なる人、自分に近い人と繋がりましょう。</p>
+    </div>
+    <div class= "col-6">
+      <%= image_tag "about-cheers-img.jpg", class: "img-fluid" %>
+    </div>
+  </div>
+  <div class= "row">
+    <div class= "col-6">
+      <%= image_tag "about-find-img.jpeg", class: "img-fluid" %>
+    </div>
+    <div class= "col-6">
+      <h4>お店を探す</h4>
+      <p>繋がっている人がお勧めしているお店を知ることができます。普段からチェックしてお気に入りにしておくのも良し、急遽その場で近くにフォロワーさんのお勧めのお店がないかをチェックして探してみるも良し。自分が信頼している人のおすすめするお店を見つけることができます。</p>
+    </div>
+  </div>
+  <div class= "row">
+    <div class= "col-12 text-center mt-3 mb-2">
+      <%= link_to "はじめる",new_user_registration_path %>
+    </div>
   </div>
 </div>

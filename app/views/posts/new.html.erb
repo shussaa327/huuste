@@ -1,2 +1,13 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<div class= "container">
+  <h1>新規投稿</h1>
+  <%= form_for(@post) do |f| %>
+    <h3>コメント</h3>
+    <%= f.text_area :comment %>
+    <h3>写真</h3>
+    <%= f.attachment_field :image %>
+    <h3>評価</h3>
+    <%= f.number_field :rating, max:5, min:1 %>
+
+    <%= f.submit "投稿する" %>
+  <% end %>
+</div>
