@@ -39,7 +39,9 @@ ActiveRecord::Schema.define(version: 2020_02_10_055108) do
     t.string "area"
     t.string "phone_number"
     t.string "open_time"
-    t.integer "average_price"
+    t.string "close_time"
+    t.integer "min_average_price"
+    t.integer "max_average_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

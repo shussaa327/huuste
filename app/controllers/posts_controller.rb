@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path
     else
-      redirect_to new_post_path
+      render "posts/new"
     end
   end
 
