@@ -6,4 +6,7 @@
     <%= link_to "編集する", edit_user_path(@user) %>
     <%= link_to "退会する",user_path(@user), method: :delete, "data-confirm" => "本当に退会しますか？" %>
   </div>
+  <div class= "row">
+    <%= render "posts/index", posts: @user.posts %>
+  </div>
 <div>
