@@ -1,2 +1,12 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<div class = "container">
+  <h1>投稿編集</h1>
+  <%= form_for(@post) do |f| %>
+    <h4>コメント</h4>
+    <%= f.text_area :comment, placeholder: "コメントを入力" %>
+    <h4>写真</h4>
+    <%= f.attachment_field :image %>
+    <h4>評価</h4>
+    <%= f.number_field :rating, max:5, min: 1 %>
+    <%= f.submit "変更する" %>
+  <% end %>
+</div>

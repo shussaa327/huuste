@@ -7,7 +7,9 @@ class CreateShops < ActiveRecord::Migration[5.2]
       t.string :area
       t.string :phone_number
       t.string :open_time
-      t.integer :average_price
+      t.string :close_time
+      t.integer :min_average_price
+      t.integer :max_average_price
 
       t.timestamps
     end

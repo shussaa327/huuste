@@ -5,4 +5,5 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :post_images, dependent: :destroy
   has_many :user_recommendations, dependent: :destroy
+  attachment :user_image
 end

@@ -2,12 +2,11 @@
   <h1>新規投稿</h1>
   <%= form_for(@post) do |f| %>
     <h3>コメント</h3>
-    <%= f.text_area :comment %>
+    <%= f.text_area :comment, placeholder: "コメントを入力" %>
     <h3>写真</h3>
     <%= f.attachment_field :image %>
     <h3>評価</h3>
     <%= f.number_field :rating, max:5, min:1 %>
-
     <%= f.submit "投稿する" %>
   <% end %>
 </div>

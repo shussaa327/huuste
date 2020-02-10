@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_06_091334) do
+ActiveRecord::Schema.define(version: 2020_02_10_055108) do
 
   create_table "post_images", force: :cascade do |t|
     t.string "post_image_id"
@@ -39,7 +39,9 @@ ActiveRecord::Schema.define(version: 2020_02_06_091334) do
     t.string "area"
     t.string "phone_number"
     t.string "open_time"
-    t.integer "average_price"
+    t.string "close_time"
+    t.integer "min_average_price"
+    t.integer "max_average_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -68,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_02_06_091334) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_image_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
