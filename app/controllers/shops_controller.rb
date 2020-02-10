@@ -17,6 +17,7 @@ class ShopsController < ApplicationController
   end
 
   def show
+    @shop = Shop.find(params[:id])
   end
 
   def edit
@@ -26,6 +27,6 @@ class ShopsController < ApplicationController
 
   def shop_params
     params.require(:shop).permit(:name,:area,:address,:order_postal_code,
-      :phone_number,:open_time,:average_price)
+      :phone_number,:open_time,:close_time,:min_average_price,:max_average_price)
   end
 end
