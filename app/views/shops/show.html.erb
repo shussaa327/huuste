@@ -18,4 +18,6 @@
   <%= @shop.min_average_price %>
   ~
   <%= @shop.max_average_price %>円
+  <p><%= link_to "店舗情報を編集する", edit_shop_path(@shop) %></p>
+  <%= link_to "投稿する", new_shop_post_path(@shop) %>
 </div>
