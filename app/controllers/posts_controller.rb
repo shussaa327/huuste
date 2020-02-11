@@ -4,11 +4,13 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @shop = Shop.find(params[:shop_id])
+    @post = @shop.posts.new
   end
 
   def create
-    @post = Post.new(post_params)
+    @shop = Shop.find(params[:shop_id])
+    @post = @shop.posts.new(post_params)
     @post.user_id = current_user.id
     if @post.save
       redirect_to user_path(current_user)
@@ -18,10 +20,12 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @shop = Shop.find(params[:shop_id])
     @post = Post.find(params[:id])
   end
 
   def update
+    shop = Shop.find(params[:shop_id])
     post = Post.find(params[:id])
     post.update(post_params)
     redirect_to root_path

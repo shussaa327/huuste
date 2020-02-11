@@ -1,6 +1,6 @@
 <div class= "container">
   <h1>新規投稿</h1>
-  <%= form_for(@post) do |f| %>
+  <%= form_with(model: [@shop, @post]) do |f| %>
     <h3>コメント</h3>
     <%= f.text_area :comment, placeholder: "コメントを入力" %>
     <h3>写真</h3>
