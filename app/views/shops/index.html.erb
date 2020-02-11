@@ -1,8 +1,8 @@
 <div class= "container">
-  <h1>お店一覧</h1>
+  <h1>検索されたお店</h1>
   <% @shops.each do |shop| %>
     <div class= "row">
-      <%= shop.name %>
+      <%= link_to shop.name, shop_path(shop) %>
       <%= shop.area %>
     </div>
   <% end %>
