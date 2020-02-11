@@ -1,8 +1,9 @@
 <div class= "container">
   <h1>投稿詳細</h1>
+  <h4>店舗名</h4>
+  <%= link_to @post.shop.name, shop_path(@post.shop_id) %>
   <h4>コメント</h4>
   <%= @post.comment %>
-  <h4>画像</h4>
   <%= attachment_image_tag @post, :image, size: "300x300", format: "jpeg" %>
   <h4>評価</h4>
   <%= @post.rating %>
