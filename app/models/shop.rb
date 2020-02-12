@@ -5,6 +5,6 @@ class Shop < ApplicationRecord
 
   def self.search(search)
     return Shop.all unless search
-    Shop.where(["name LIKE?","%#{search}%"])
+    Shop.where(["name LIKE?","#{search}%"])
   end
 end
