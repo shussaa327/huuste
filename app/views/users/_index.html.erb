@@ -2,14 +2,16 @@
   <% if user_signed_in? %>
     <% users.each do |user| %>
       <div class = "row">
-        <%= attachment_image_tag user, :user_image, size: "40x40", format: "jpeg", fallback: "default-icon-img.jpeg" %>
-        <%= user.name %>
-        <% if current_user.following?(user) %>
-          <%= link_to "フォロー解除", unfollow_path(user.id), method: :POST %>
-        <% else %>
-          <%= link_to "フォローする", follow_path(user.id), method: :POST %>
+        <% unless user == current_user %>
+          <%= attachment_image_tag user, :user_image, size: "40x40", format: "jpeg", fallback: "default-icon-img.jpeg" %>
+          <%= user.name %>
+          <% if current_user.following?(user) %>
+            <%= link_to "フォロー解除", unfollow_path(user.id), method: :POST %>
+          <% else %>
+            <%= link_to "フォローする", follow_path(user.id), method: :POST %>
+          <% end %>
+          <%= link_to "詳細", user_path(user) %>
         <% end %>
-        <%= link_to "詳細", user_path(user) %>
       </div>
     <% end %>
   <% end %>

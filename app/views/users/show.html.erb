@@ -3,6 +3,15 @@
   <div class= "row">
     <%= attachment_image_tag @user, :user_image, size: "40x40",format: "jpeg",fallback: "default-icon-img.jpeg" %>
     <%= @user.name %>
+    <p><%= "フォロー #{@user.follower.count}" %></p>
+    <p><%= "フォロワー #{@user.followed.count}" %></p>
+    <% unless @user == current_user %>
+      <% if current_user.following?(@user) %>
+        <%= link_to "フォロー解除", unfollow_path(@user.id), method: :POST %>
+      <% else %>
+        <%= link_to "フォローする", follow_path(@user.id), method: :POST %>
+      <% end %>
+    <% end %>
     <%= link_to "編集する", edit_user_path(@user) %>
     <%= link_to "退会する",user_path(@user), method: :delete, "data-confirm" => "本当に退会しますか？" %>
   </div>
