@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_055108) do
+ActiveRecord::Schema.define(version: 2020_02_12_070129) do
 
   create_table "post_images", force: :cascade do |t|
     t.string "post_image_id"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 2020_02_10_055108) do
     t.integer "user_id"
     t.integer "shop_id"
     t.integer "post_image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

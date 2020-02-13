@@ -13,6 +13,12 @@
     <header>
       <nav class="navbar navbar-expand-md" style="background-color: orange;">
         <%= link_to "Huuste", root_path %>
+        <div class ="search">
+          <%= form_tag(shops_path, :method => "get") do %>
+            <%= text_field_tag :search,"",placeholder: "お店の名前" %>
+            <%= submit_tag "Search", :name => nil %>
+          <% end %>
+        </div>
         <div class="collapse navbar-collapse" id="Navber">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav_item"><%= link_to "Huusteとは？", about_path %></li>
