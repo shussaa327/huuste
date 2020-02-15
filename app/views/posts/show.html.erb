@@ -1,12 +1,22 @@
 <div class= "container">
   <h1>投稿詳細</h1>
-  <h4>店舗名</h4>
-  <%= link_to @post.shop.name, shop_path(@post.shop_id) %>
-  <h4>コメント</h4>
-  <%= @post.comment %>
+  <table>
+    <tr>
+      <th>店舗名</th>
+      <td><%= link_to @post.shop.name, shop_path(@post.shop_id) %></td>
+    </tr>
+    <tr>
+      <th>コメント</th>
+      <td><%= @post.comment %></td>
+    </tr>
+    <tr>
+      <th>評価</th>
+      <td><%= @post.rating %></td>
+    </tr>
+  </table>
   <%= attachment_image_tag @post, :image, size: "300x300", format: "jpeg" %>
-  <h4>評価</h4>
-  <%= @post.rating %>
-  <%= link_to "編集する", edit_shop_post_path(@post.shop_id,@post) %>
-  <%= link_to "削除する", shop_post_path(@post.shop_id,@post), method: :delete, "data-confirm" => "本当に削除してよろしいですか？" %>
+  <% if @post.user == current_user %>
+    <p><%= link_to "編集する", edit_shop_post_path(@post.shop_id,@post) %></p>
+    <p><%= link_to "削除する", shop_post_path(@post.shop_id,@post), method: :delete, "data-confirm" => "本当に削除してよろしいですか？" %></p>
+  <% end %>
 </div>
