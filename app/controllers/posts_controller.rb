@@ -15,7 +15,6 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to user_path(current_user)
     else
-      byebug
       render "posts/new"
     end
   end
@@ -26,10 +25,13 @@ class PostsController < ApplicationController
   end
 
   def update
-    shop = Shop.find(params[:shop_id])
-    post = Post.find(params[:id])
-    post.update(post_params)
-    redirect_to root_path
+    @shop = Shop.find(params[:shop_id])
+    @post = Post.find(params[:id])
+    if post.update(post_params)
+      redirect_to root_path
+    else
+      render "posts/edit"
+    end
   end
 
   def show

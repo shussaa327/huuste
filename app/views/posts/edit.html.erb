@@ -1,4 +1,14 @@
 <div class = "container">
+  <% if @post.errors.any? %>
+    <div class= "error_explanation">
+      <p><%= @post.errors.count %>件の入力の誤りがあります</p>
+      <div class= "error_messages">
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
   <h1>投稿編集</h1>
   <%= form_with(model: [@shop, @post]) do |f| %>
     <h4>コメント</h4>
