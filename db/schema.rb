@@ -12,6 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2020_02_24_145512) do
 
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "post_images", force: :cascade do |t|
     t.string "post_image_id"
     t.integer "user_id"
@@ -53,14 +60,6 @@ ActiveRecord::Schema.define(version: 2020_02_24_145512) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
-  end
-
-  create_table "user_favorites", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post_id"
-    t.boolean "deleted_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "user_recommendations", force: :cascade do |t|
