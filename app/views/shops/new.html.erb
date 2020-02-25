@@ -1,4 +1,14 @@
 <div class= "container">
+  <% if @shop.errors.any? %>
+    <div class= "error_explanation">
+      <p><%= @shop.errors.count %>件の入力の誤りがあります</p>
+      <div class= "error_messages">
+        <% @shop.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
   <h1>新しくお店を登録</h1>
   <%= form_for(@shop) do |f| %>
     <h4>名前</h4>
@@ -21,4 +31,29 @@
     <%= f.number_field :max_average_price, min:1 %>
     <%= f.submit "登録する" %>
   <% end %>
+
+  <h2>map</h2>
+  <%= form_with url: map_request_path, method: :get do |f| %>
+    <%= f.text_field :address %>
+    <%= f.submit "地図表示" %>
+  <% end %>
+  <div id='map'></div>
+    <style>
+      #map{
+      height: 200px;
+      width: 200px;
+      }
+    </style>
+
+    <script>
+      let mapInstance
+
+      function initMap(){
+        mapInstance = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 35.4057,lng: 139.4510},
+        zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=my-key&callback=initMap" async defer></script>
 </div>

@@ -1,24 +1,62 @@
 <div class= "container">
   <h1>店舗情報</h1>
-  <h4>名前</h4>
-  <%= @shop.name %>
-  <h4>地域</h4>
-  <%= @shop.area %>
-  <h4>郵便番号</h4>
-  <%= @shop.order_postal_code %>
-  <h4>住所</h4>
-  <%= @shop.address %>
-  <h4>電話番号</h4>
-  <%= @shop.phone_number %>
-  <h4>営業時間</h4>
-  <%= @shop.open_time %>
-  ~
-  <%= @shop.close_time %>
-  <h4>平均予算</h4>
-  <%= @shop.min_average_price %>
-  ~
-  <%= @shop.max_average_price %>円
+  <table class= "table table-bordered">
+    <tr>
+      <th>店舗名</th>
+      <td><%= @shop.name %></td>
+    </tr>
+    <tr>
+      <th>地域</th>
+      <td><%= @shop.area %></td>
+    </tr>
+     <tr>
+      <th>郵便番号</th>
+      <td><%= @shop.order_postal_code %></td>
+    </tr>
+     <tr>
+      <th>住所</th>
+      <td>
+        <%= @shop.address %>
+         <div id='map'></div>
+         <style>
+          #map{
+           height: 200px;
+           width: 200px;
+          }
+         </style>
 
+         <script>
+         function initMap(){
+          let map = new google.maps.Map(document.getElementById('map'), {
+           center: {lat: 35.4057,lng: 139.4510},
+           zoom: 8
+           });
+          }
+         </script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=my-key&callback=initMap" async defer></script>
+      </td>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <td><%= @shop.phone_number %></td>
+    </tr>
+    <tr>
+      <th>営業時間</th>
+      <td>
+        <%= @shop.open_time %>
+        ~
+        <%= @shop.close_time %>
+      </td>
+    </tr>
+    <tr>
+      <th>平均予算</th>
+      <td>
+        <%= @shop.min_average_price %>
+        ~
+        <%= @shop.max_average_price %>円
+      </td>
+    </tr>
+  </table>
   <p><%= link_to "店舗情報を編集する", edit_shop_path(@shop) %></p>
-  <%= link_to "投稿する", new_shop_post_path(@shop) %>
+  <%= link_to "お店について投稿する", new_post_path(:shop_id => @shop.id) %>
 </div>

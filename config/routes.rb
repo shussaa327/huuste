@@ -5,9 +5,9 @@ post "follow/:id" => "relationships#follow", as: "follow"
 post "unfollow/:id" => "relationships#unfollow", as: "unfollow"
 get "following/:id" => "users#following"
 get "follower/:id" => "users#follower"
+get "/map_request" => "shops#map", as: "map_request"
 devise_for :users
-resources :shops do
-  resources :posts
-end
+resources :shops
+resources :posts
 resources :users
 end
