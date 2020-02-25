@@ -16,7 +16,7 @@
   </table>
   <%= attachment_image_tag @post, :image, size: "300x300", format: "jpeg" %>
   <% if @post.user == current_user %>
-    <p><%= link_to "編集する", edit_shop_post_path(@post.shop_id,@post) %></p>
-    <p><%= link_to "削除する", shop_post_path(@post.shop_id,@post), method: :delete, "data-confirm" => "本当に削除してよろしいですか？" %></p>
+    <p><%= link_to "編集する", edit_post_path(@post.shop_id,@post) %></p>
+    <p><%= link_to "削除する", post_path(@post.shop_id,@post), method: :delete, "data-confirm" => "本当に削除してよろしいですか？" %></p>
   <% end %>
 </div>
