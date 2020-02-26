@@ -10,6 +10,7 @@ devise_for :users
 resources :shops
 resources :posts do
   resource :favorites, only: [:create, :destroy]
+  resource :post_comments, only: [:create]
 end
 resources :users
 end
