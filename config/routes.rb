@@ -8,6 +8,9 @@ get "follower/:id" => "users#follower"
 get "/map_request" => "shops#map", as: "map_request"
 devise_for :users
 resources :shops
-resources :posts
+resources :posts do
+  resource :favorites, only: [:create, :destroy]
+  resource :post_comments, only: [:create]
+end
 resources :users
 end
