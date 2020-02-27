@@ -54,6 +54,13 @@ ActiveRecord::Schema.define(version: 2020_02_26_141520) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "shop_recommendations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "shop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "shops", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -68,13 +75,6 @@ ActiveRecord::Schema.define(version: 2020_02_26_141520) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
-  end
-
-  create_table "user_recommendations", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
