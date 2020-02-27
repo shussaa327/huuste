@@ -31,9 +31,11 @@
     </div>
   <% end %>
 
-  <%= form_for [@post, @post_comment] do |f| %>
-    <%= f.text_area :comment, placeholder: "コメントを入力" %>
-    <%= f.submit "送信" %>
+  <% if user_signed_in? %>
+    <%= form_for [@post, @post_comment] do |f| %>
+      <%= f.text_area :comment, placeholder: "コメントを入力" %>
+      <%= f.submit "送信" %>
+    <% end %>
   <% end %>
 
   <% if @post.user == current_user %>
