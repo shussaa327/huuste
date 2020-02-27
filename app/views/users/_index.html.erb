@@ -1,19 +1,21 @@
-<div class = "container">
-  <div class= "row">
-    <table>
-      <% if user_signed_in? %>
+<div class = "user-index">
+  <table>
+    <% if user_signed_in? %>
+      <tbody>
         <% users.each do |user| %>
-          <tr>
-            <% unless user == current_user %>
-              <%= link_to user_path(user) do %>
-                <%= attachment_image_tag user, :user_image, size: "40x40", format: "jpeg", fallback: "default-icon-img.jpeg",class: "rounded-circle" %>
-                <%= user.name %>
-              <% end %>
-              <%= render "users/follow_link", user: user %>
-            <% end %>
-          </tr>
+          <% unless user == current_user %>
+            <tr>
+              <td>
+                <%= link_to user_path(user) do %>
+                  <%= attachment_image_tag user, :user_image, size: "40x40", format: "jpeg", fallback: "default-icon-img.jpeg",class: "rounded-circle" %>
+                <% end %>
+              </td>
+              <td><%= user.name %></td>
+              <td><%= render "users/follow_link", user: user %></td>
+            </tr>
+          <% end %>
         <% end %>
-      <% end %>
-    </table>
-  </div>
+      </tbody>
+    <% end %>
+  </table>
 </div>
