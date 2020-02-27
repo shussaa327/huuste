@@ -1,5 +1,6 @@
 class ShopRecommendationsController < ApplicationController
   def index
+    shop_recommendations = Shop_recommendations.all
   end
 
   def create
