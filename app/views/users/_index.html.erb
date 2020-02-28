@@ -11,7 +11,11 @@
             </td>
             <td><%= user.name %></td>
             <% if user_signed_in? %>
-              <td><%= render "relationships/follow_link", user: user %></td>
+              <td>
+                <div id= "follow_button">
+                  <%= render "relationships/follow_link", user: user %>
+                </div>
+              </td>
             <% end %>
           </tr>
         <% end %>

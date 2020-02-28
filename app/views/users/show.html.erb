@@ -5,11 +5,13 @@
       <%= attachment_image_tag @user, :user_image, size: "40x40",format: "jpeg",fallback: "default-icon-img.jpeg", class: "rounded-circle" %>
       <%= @user.name %>
     </div>
-    <div class="col-2">
-     <%= render "relationships/follow_people_num", user: @user%>
+    <div class="col-2" id="follow_counts">
+     <%= render "relationships/follow_people_num", user: @user %>
     </div>
 
-    <%= render "relationships/follow_link", user: @user %>
+    <div id= "follow_button">
+      <%= render "relationships/follow_link", user: @user %>
+    </div>
 
     <% if @user == current_user %>
       <div class="col-2">
