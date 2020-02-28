@@ -1,6 +1,7 @@
 class Shop < ApplicationRecord
   has_many :posts
   has_many :post_images
+  has_many :shop_recommendations, dependent: :destroy
   belongs_to :user, optional: true
   validates :name, presence: true
   validates :address, presence: true
@@ -9,5 +10,9 @@ class Shop < ApplicationRecord
   def self.search(search)
     return Shop.all unless search
     Shop.where(["name LIKE?","#{search}%"])
+  end
+
+  def shop_recommended_by?(user)
+    shop_recommendations.where(user_id: user.id).exists?
   end
 end

@@ -5,19 +5,23 @@
       <%= attachment_image_tag @user, :user_image, size: "40x40",format: "jpeg",fallback: "default-icon-img.jpeg", class: "rounded-circle" %>
       <%= @user.name %>
     </div>
-    <div class="col-2">
-      <p id= "followers"><%= link_to "フォロー #{@user.follower.count}", {controller: :users, action: :following} %></p>
-      <p><%= link_to "フォロワー #{@user.followed.count}",{controller: :users, action: :follower} %></p>
+    <div class="col-2" id="follow_counts">
+     <%= render "relationships/follow_people_num", user: @user %>
     </div>
-    <% unless @user == current_user %>
-      <%= render "users/follow_link", user: @user %>
-    <% end %>
+
+    <div id= "follow_button">
+      <%= render "relationships/follow_link", user: @user %>
+    </div>
+
     <% if @user == current_user %>
       <div class="col-2">
         <%= link_to "編集する", edit_user_path(@user) %>
         <%= link_to "退会する",user_path(@user), method: :delete, "data-confirm" => "本当に退会しますか？" %>
       </div>
     <% end %>
+    <div class= "col-2">
+      <%= render "shop_recommendations/index", shop_recommendations: @user.shop_recommendations %>
+    </div>
   </div>
   <div class= "row">
     <%= render "posts/index", posts: @user.posts %>

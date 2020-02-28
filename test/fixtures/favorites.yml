@@ -3,9 +3,7 @@
 one:
   user_id: 1
   post_id: 1
-  deleted_at: false
 
 two:
   user_id: 1
   post_id: 1
-  deleted_at: false

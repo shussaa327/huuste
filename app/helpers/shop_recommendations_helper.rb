@@ -1,0 +1,2 @@
+module ShopRecommendationsHelper
+end

@@ -1,0 +1,8 @@
+<div class= "shop-recommendations">
+  <h5>このユーザーのおすすめ店</h5>
+  <% shop_recommendations.each do |shop_recommendation| %>
+    <div class= "shop_recommendation">
+      <%= link_to shop_recommendation.shop.name, shop_path(shop_recommendation.shop) %>
+    </div>
+  <% end %>
+</div>
