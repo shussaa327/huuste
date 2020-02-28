@@ -6,12 +6,11 @@
       <%= @user.name %>
     </div>
     <div class="col-2">
-      <p id= "followers"><%= link_to "フォロー #{@user.follower.count}", {controller: :users, action: :following} %></p>
-      <p><%= link_to "フォロワー #{@user.followed.count}",{controller: :users, action: :follower} %></p>
+     <%= render "relationships/follow_people_num", user: @user%>
     </div>
-    <% unless @user == current_user %>
-      <%= render "users/follow_link", user: @user %>
-    <% end %>
+
+    <%= render "relationships/follow_link", user: @user %>
+
     <% if @user == current_user %>
       <div class="col-2">
         <%= link_to "編集する", edit_user_path(@user) %>
