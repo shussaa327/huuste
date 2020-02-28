@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_02_27_145956) do
     t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_favorites_on_user_id", unique: true
   end
 
   create_table "post_comments", force: :cascade do |t|
@@ -52,6 +53,9 @@ ActiveRecord::Schema.define(version: 2020_02_27_145956) do
     t.integer "followed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
   create_table "shop_recommendations", force: :cascade do |t|
@@ -59,6 +63,7 @@ ActiveRecord::Schema.define(version: 2020_02_27_145956) do
     t.integer "shop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_shop_recommendations_on_user_id", unique: true
   end
 
   create_table "shops", force: :cascade do |t|
