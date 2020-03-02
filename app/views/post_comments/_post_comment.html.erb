@@ -6,6 +6,9 @@
       <% end %>
       <%= post_comment.user.name %>
       <%= post_comment.comment %>
+      <% if post_comment.user == current_user %>
+        <%= link_to "投稿を削除する", post_post_comment_path(post,post_comment), method: :delete %>
+      <% end %>
     </div>
   <% end %>
 

@@ -3,8 +3,8 @@ root "homes#top"
 get "about" => "homes#about"
 post "follow/:id" => "relationships#follow", as: "follow"
 post "unfollow/:id" => "relationships#unfollow", as: "unfollow"
-get "/following/:id" => "relationships#following"
-get "/follower/:id" => "relationships#follower"
+get "following/:id" => "relationships#following"
+get "follower/:id" => "relationships#follower"
 get "/map_request" => "shops#map", as: "map_request"
 devise_for :users
 resources :shops do
@@ -12,7 +12,7 @@ resources :shops do
 end
 resources :posts do
   resource :favorites, only: [:create, :destroy]
-  resource :post_comments, only: [:create]
+  resources :post_comments, only: [:create, :destroy]
 end
 resources :users
 end

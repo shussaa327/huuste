@@ -8,6 +8,13 @@ class PostCommentsController < ApplicationController
     @post_comment = PostComment.new
   end
 
+  def destroy
+    post = Post.find(params[:post_id])
+    comment = PostComment.find_by(post_id: post.id, id: params[:id])
+    comment.destroy
+    redirect_to post_path(post)
+  end
+
   private
   def post_comment_params
     params.require(:post_comment).permit(:comment)
