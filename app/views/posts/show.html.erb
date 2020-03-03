@@ -17,15 +17,19 @@
   <%= attachment_image_tag @post, :image, size: "300x300", format: "jpeg" %>
 
   <div id= "favorites_button">
-    <%= render partial: "favorites/favorite", locals: {post: @post} %>
+    <%= render "favorites/favorite", post: @post %>
+  </div>
+
+  <% if @post.user == current_user %>
+    <p><%= link_to "投稿を編集する", edit_post_path(@post.shop_id,@post) %></p>
+    <p><%= link_to "投稿を削除する", post_path(@post.shop_id,@post), method: :delete, "data-confirm" => "本当に削除してよろしいですか？" %></p>
+  <% end %>
+
+  <div class= "post_shop_show">
+    <%= render "shops/show", shop: @post.shop %>
   </div>
 
   <div id= "post_comments">
     <%= render "post_comments/post_comment", post: @post, post_comment: @post_comment %>
   </div>
-
-  <% if @post.user == current_user %>
-    <p><%= link_to "編集する", edit_post_path(@post.shop_id,@post) %></p>
-    <p><%= link_to "削除する", post_path(@post.shop_id,@post), method: :delete, "data-confirm" => "本当に削除してよろしいですか？" %></p>
-  <% end %>
 </div>
