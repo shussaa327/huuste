@@ -13,6 +13,10 @@
       <%= render "relationships/follow_link", user: @user %>
     </div>
 
+    <div class= "user_introduction">
+      <%= @user.introduction %>
+    </div>
+
     <% if @user == current_user %>
       <div class="col-2">
         <%= link_to "編集する", edit_user_path(@user) %>
