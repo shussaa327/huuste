@@ -8,13 +8,13 @@
     </div>
 
   <ul id= "tab_menu">
-    <li><a href= "#tab1" class= "active">投稿</a></li>
-    <li><a href= "#tab2">店舗情報</a></li>
-    <li><a href= "#tab3">コメント</a></li>
+    <li><a href= "#post_user_show" class= "active">投稿</a></li>
+    <li><a href= "#post_shop_show">店舗情報</a></li>
+    <li><a href= "#post_comments">コメント</a></li>
   </ul>
 
   <div id= "tab_contents">
-    <div id= "tab1" class= "tab">
+    <div id= "post_user_show" class= "tab tab1">
       <%= attachment_image_tag @post, :image, size: "300x300", format: "jpeg" %>
       <table>
         <tr>
@@ -32,11 +32,11 @@
       <% end %>
     </div>
 
-    <div id= "tab2" class= "post_shop_show tab">
+    <div id= "post_shop_show" class= "tab tab2">
       <%= render "shops/show", shop: @post.shop %>
     </div>
 
-    <div id= "tab3" class= "post_comments tab">
+    <div id= "post_comments" class= "post_comments tab tab3">
       <%= render "post_comments/post_comment", post: @post, post_comment: @post_comment %>
     </div>
   </div>

@@ -17,9 +17,9 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 
-$(document).ready(function(){
+$(document).on("turbolinks:load", function(){
 
-  $('#tab_contents .tab[id != "tab1"]').hide();
+  $('#tab_contents .tab[id != "post_user_show"]').hide();
 
   $('#tab_menu a').on('click', function(){
     $("#tab_contents .tab").hide();
