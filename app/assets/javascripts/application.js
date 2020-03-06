@@ -19,12 +19,11 @@
 
 $(document).on("turbolinks:load", function(){
 
-  $('#tab_contents .tab[id != "post_user_show"]').hide();
+  $('.tab_contents .tab[id != "post_user_show"][id != "user_info_posts"]').hide();
 
   $('#tab_menu a').on('click', function(){
-    $("#tab_contents .tab").hide();
+    $(".tab_contents .tab").hide();
     $($(this).attr("href")).show();
     return false;
   });
-
 });

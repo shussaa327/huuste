@@ -10,10 +10,10 @@
   <ul id= "tab_menu">
     <li><a href= "#post_user_show" class= "active">投稿</a></li>
     <li><a href= "#post_shop_show">店舗情報</a></li>
-    <li><a href= "#post_comments">コメント</a></li>
+    <li><a href= "#post_comments">コメント(<%= @post.post_comments.count %>)</a></li>
   </ul>
 
-  <div id= "tab_contents">
+  <div class= "tab_contents">
     <div id= "post_user_show" class= "tab tab1">
       <%= attachment_image_tag @post, :image, size: "300x300", format: "jpeg" %>
       <table>
