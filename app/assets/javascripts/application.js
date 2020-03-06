@@ -12,7 +12,19 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require_tree .
 //= require jquery
+//= require turbolinks
 //= require bootstrap-sprockets
+
+$(document).ready(function(){
+
+  $('#tab_contents .tab[id != "tab1"]').hide();
+
+  $('#tab_menu a').on('click', function(){
+    $("#tab_contents .tab").hide();
+    $($(this).attr("href")).show();
+    return false;
+  });
+
+});
