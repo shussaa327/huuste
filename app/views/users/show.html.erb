@@ -14,9 +14,9 @@
     </div>
 
     <ul id= "tab_menu">
-    <li><a href= "#user_info_posts" class= "active">投稿</a></li>
+    <li><a href= "#user_info_posts" class= "active">投稿一覧</a></li>
     <li><a href= "#user_introduction">プロフィール</a></li>
-    <li><a href= "#user_info_favorites">このユーザーのお気に入り(<%= @user.favorites.count %>)</a></li>
+    <li><a href= "#user_info_favorites">お気に入り(<%= @user.favorites.count %>)</a></li>
     </ul>
 
     <% if @user == current_user %>
@@ -41,6 +41,7 @@
 
     <div id= "user_info_favorites" class= "tab tab3">
       <h4>このユーザーのお気に入り</h4>
+      
     </div>
   </div>
 <div>
