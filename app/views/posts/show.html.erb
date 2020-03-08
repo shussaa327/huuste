@@ -1,45 +1,43 @@
 <div class= "container">
-  <h1>投稿詳細</h1>
-  <table>
-    <tr>
-      <th>店舗名</th>
-      <td><%= link_to @post.shop.name, shop_path(@post.shop_id) %></td>
-    </tr>
-    <tr>
-      <th>感想</th>
-      <td><%= @post.comment %></td>
-    </tr>
-    <tr>
-      <th>評価</th>
-      <td><%= @post.rating %></td>
-    </tr>
-  </table>
-  <%= attachment_image_tag @post, :image, size: "300x300", format: "jpeg" %>
-
-  <div id= "favorites_button">
-    <%= render partial: "favorites/favorite", locals: {post: @post} %>
-  </div>
-
-  <p><%= @post.post_comments.count %>件のコメント</p>
-  <% @post.post_comments.each do |post_comment| %>
-    <div class = "post_comments">
-      <%= link_to user_path(post_comment.user) do %>
-        <%= attachment_image_tag post_comment.user, :user_image, size: "40x40", format: "jpeg", fallback: "default-icon-img.jpeg",class: "rounded-circle" %>
-      <% end %>
-      <%= post_comment.user.name %>
-      <%= post_comment.comment %>
+  <div class= "post_head_items">
+    <h1>投稿詳細</h1>
+    <h4>店舗名</h4>
+    <%= link_to @post.shop.name, shop_path(@post.shop_id) %>
+    <div id= "favorites_button">
+      <%= render "favorites/favorite", post: @post %>
     </div>
-  <% end %>
 
-  <% if user_signed_in? %>
-    <%= form_for [@post, @post_comment] do |f| %>
-      <%= f.text_area :comment, placeholder: "コメントを入力" %>
-      <%= f.submit "送信" %>
-    <% end %>
-  <% end %>
+  <ul id= "tab_menu">
+    <li><a href= "#post_user_show" class= "active">投稿</a></li>
+    <li><a href= "#post_shop_show">店舗情報</a></li>
+    <li><a href= "#post_comments">コメント(<%= @post.post_comments.count %>)</a></li>
+  </ul>
 
-  <% if @post.user == current_user %>
-    <p><%= link_to "編集する", edit_post_path(@post.shop_id,@post) %></p>
-    <p><%= link_to "削除する", post_path(@post.shop_id,@post), method: :delete, "data-confirm" => "本当に削除してよろしいですか？" %></p>
-  <% end %>
+  <div class= "tab_contents">
+    <div id= "post_user_show" class= "tab tab1">
+      <%= attachment_image_tag @post, :image, size: "300x300", format: "jpeg" %>
+      <table>
+        <tr>
+          <th>感想</th>
+          <td><%= @post.comment %></td>
+        </tr>
+        <tr>
+          <th>評価</th>
+          <td><%= @post.rating %></td>
+        </tr>
+      </table>
+      <% if @post.user == current_user %>
+        <p><%= link_to "投稿を編集する", edit_post_path(@post.shop_id,@post) %></p>
+        <p><%= link_to "投稿を削除する", post_path(@post.shop_id,@post), method: :delete, "data-confirm" => "本当に削除してよろしいですか？" %></p>
+      <% end %>
+    </div>
+
+    <div id= "post_shop_show" class= "tab tab2">
+      <%= render "shops/show", shop: @post.shop %>
+    </div>
+
+    <div id= "post_comments" class= "post_comments tab tab3">
+      <%= render "post_comments/post_comment", post: @post, post_comment: @post_comment %>
+    </div>
+  </div>
 </div>

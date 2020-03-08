@@ -1,5 +1,5 @@
 <% if shop.shop_recommended_by?(current_user) %>
-  <%= link_to "おすすめを解除する", shop_shop_recommendations_path(@shop), method: :delete, remote: true %>
+  <%= link_to "このお店のおすすめを解除する", shop_shop_recommendations_path(shop), method: :delete, remote: true %>
 <% else %>
-  <%= link_to "おすすめに登録する", shop_shop_recommendations_path(@shop), method: :post, remote: true %>
+  <%= link_to "このお店をおすすめに登録する", shop_shop_recommendations_path(shop), method: :post, remote: true %>
 <% end %>

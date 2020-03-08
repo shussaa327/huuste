@@ -1,0 +1,20 @@
+<p><%= post.post_comments.count %>件のコメント</p>
+  <% post.post_comments.each do |post_comment| %>
+    <div class = "post_comments">
+      <%= link_to user_path(post_comment.user) do %>
+        <%= attachment_image_tag post_comment.user, :user_image, size: "40x40", format: "jpeg", fallback: "default-icon-img.jpeg",class: "rounded-circle" %>
+      <% end %>
+      <%= post_comment.user.name %>
+      <%= post_comment.comment %>
+      <% if post_comment.user == current_user %>
+        <%= link_to "投稿を削除する", post_post_comment_path(post,post_comment), method: :delete, remote: true, "data-confirm" => "コメントを削除しますか？" %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <%= form_for [post, post_comment], remote: true do |f| %>
+      <%= f.text_area :comment, placeholder: "コメントを入力" %>
+      <%= f.submit "送信" %>
+    <% end %>
+  <% end %>

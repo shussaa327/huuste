@@ -1,2 +1,2 @@
- <p><%= link_to "フォロー #{@user.follower.count}", {controller: :relationships, action: :following} %></p>
- <p><%= link_to "フォロワー #{@user.followed.count}",{controller: :relationships, action: :follower} %></p>
+ <p><%= link_to "フォロー #{user.follower.count}", {controller: :relationships, action: :following} %></p>
+ <p><%= link_to "フォロワー #{user.followed.count}",{controller: :relationships, action: :follower} %></p>
