@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @favorites_posts = Post.where(id: @user.favorites)
+    @favorites = @user.favorites.all
 
   end
 
