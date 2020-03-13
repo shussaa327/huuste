@@ -11,6 +11,7 @@ class ShopsController < ApplicationController
   def create
     @shop = Shop.new(shop_params)
     if @shop.save
+      byebug
       redirect_to shop_path(@shop)
     else
       render "shops/new"

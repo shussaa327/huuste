@@ -48,12 +48,13 @@
     <script>
       let mapInstance
 
-      function initMap(){
-        mapInstance = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 35.4057,lng: 139.4510},
-        zoom: 8
-        });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=my-key&callback=initMap" async defer></script>
+<script>
+function initMap(){
+  let map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: -34.397, lng: 150.644},
+  zoom: 8
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=mykey&callback=initMap" async defer></script>
 </div>
