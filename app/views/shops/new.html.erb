@@ -31,30 +31,4 @@
     <%= f.number_field :max_average_price, min:1 %>
     <%= f.submit "登録する" %>
   <% end %>
-
-  <h2>map</h2>
-  <%= form_with url: map_request_path, method: :get do |f| %>
-    <%= f.text_field :address %>
-    <%= f.submit "地図表示" %>
-  <% end %>
-  <div id='map'></div>
-    <style>
-      #map{
-      height: 200px;
-      width: 200px;
-      }
-    </style>
-
-    <script>
-      let mapInstance
-
-<script>
-function initMap(){
-  let map = new google.maps.Map(document.getElementById('map'), {
-  center: {lat: -34.397, lng: 150.644},
-  zoom: 8
-  });
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=mykey&callback=initMap" async defer></script>
 </div>

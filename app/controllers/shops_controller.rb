@@ -11,7 +11,6 @@ class ShopsController < ApplicationController
   def create
     @shop = Shop.new(shop_params)
     if @shop.save
-      byebug
       redirect_to shop_path(@shop)
     else
       render "shops/new"
@@ -32,14 +31,6 @@ class ShopsController < ApplicationController
        redirect_to shop_path(@shop)
     else
       render "shops/edit"
-    end
-  end
-
-  def map
-    results = Geocoder.search(params[:address])
-    @latlng = results.first.coordinates
-    respond_to do |format|
-      format.js
     end
   end
 
