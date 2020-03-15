@@ -1,0 +1,20 @@
+<% if post.errors.any? %>
+  <div class= "error_explanation">
+    <p><%= post.errors.count %>件の入力の誤りがあります</p>
+    <div class= "error_messages">
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<%= form_with(model: post) do |f| %>
+  <h4>コメント</h4>
+  <%= f.text_area :comment, placeholder: "コメントを入力" %>
+  <h4>写真</h4>
+  <%= attachment_image_tag post, :image, size: "300x300", format: "jpeg" %>
+  <%= f.attachment_field :image %>
+  <h4>評価</h4>
+  <%= f.number_field :rating, max:5, min: 1 %>
+  <%= f.submit "投稿する" %>
+<% end %>
