@@ -10,7 +10,7 @@
   <ul id= "tab_menu">
     <li><a href= "#post_user_show" class= "active">投稿</a></li>
     <li><a href= "#post_shop_show">店舗情報</a></li>
-    <li><a href= "#post_comments">コメント(<%= @post.post_comments.count %>)</a></li>
+    <li id= "post_comment_tab"><%= render "post_comments/post_comment_tab", post: @post %></li>
   </ul>
 
   <div class= "tab_contents">
