@@ -16,6 +16,7 @@
 //= require jquery
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require refile
 
 $(document).on("turbolinks:load", function(){
 

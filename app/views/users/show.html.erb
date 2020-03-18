@@ -1,53 +1,62 @@
 <div class= "container">
-  <h1>ユーザー詳細</h1>
-  <div class= "">
-    <div class="">
-      <%= attachment_image_tag @user, :user_image, size: "40x40",format: "jpeg",fallback: "default-icon-img.jpeg", class: "rounded-circle" %>
-      <%= @user.name %>
-    </div>
-    <div class="" id="follow_counts">
-     <%= render "relationships/follow_people_num", user: @user %>
-    </div>
-
-    <div class= "follow_button">
-      <%= render "relationships/follow_link", user: @user %>
-    </div>
-
-    <ul id= "tab_menu">
-    <li><a href= "#user_info_posts" class= "active">投稿一覧</a></li>
-    <li><a href= "#user_introduction">プロフィール</a></li>
-    <li><a href= "#user_info_favorites">お気に入り(<%= @user.favorites.count %>)</a></li>
-    </ul>
-
-    <% if @user == current_user %>
-      <div class="">
-        <%= link_to "編集する", edit_user_path(@user) %>
-        <%= link_to "退会する",user_path(@user), method: :delete, "data-confirm" => "本当に退会しますか？" %>
-      </div>
-    <% end %>
-    <div class= "">
-      <%= render "shop_recommendations/index", shop_recommendations: @user.shop_recommendations %>
-    </div>
-  </div>
-  <div class= "tab_contents">
-    <div id= "user_info_posts" class= "tab tab1">
-      <%= render "posts/index", posts: @user.posts %>
-    </div>
-
-    <div id= "user_introduction" class= "tab tab2">
-      <h4>プロフィール</h4>
-      <%= @user.introduction %>
-    </div>
-
-    <div id= "user_info_favorites" class= "tab tab3">
-      <h4>このユーザーのお気に入り</h4>
-      <div class= "favorites_index">
-        <% @favorites.each do |favorite| %>
-          <%= link_to post_path(favorite.post) do %>
-            <%= attachment_image_tag favorite.post, :image, size: "300x300", format: "jpeg", class: "mt-2" %>
-          <% end %>
+  <div class= "row user_show_top_contents">
+    <div class= "col-4">
+      <div class= "user_show_icon">
+        <%= attachment_image_tag @user, :user_image, size: "90x90",format: "jpeg",fallback: "default-icon-img.jpeg", class: "rounded-circle" %>
+        <p><%= @user.name %></p>
+        <% if @user == current_user %>
+          <p><%= link_to "編集する", edit_user_path(@user) %></p>
         <% end %>
       </div>
+
+      <div class= "user_show_follow_info">
+        <div class="" id="follow_counts">
+          <p><%= render "relationships/follow_people_num", user: @user %></p>
+        </div>
+
+        <div class= "follow_button">
+          <p><%= render "relationships/follow_link", user: @user %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class= "col-8 tab_menu_content">
+      <ul id= "tab_menu">
+        <li><a href= "#user_info_posts" class= "active">投稿一覧</a></li>
+        <li><a href= "#user_introduction">プロフィール</a></li>
+        <li><a href= "#user_info_favorites">お気に入り(<%= @user.favorites.count %>)</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class= "row">
+    <div class= "col-10 tab_contents">
+      <div id= "user_info_posts" class= "tab tab1">
+        <%= render "posts/index", posts: @user_posts %>
+      </div>
+
+      <div id= "user_introduction" class= "tab tab2">
+        <h4>プロフィール</h4>
+        <%= @user.introduction %>
+      </div>
+
+      <div id= "user_info_favorites" class= "tab tab3">
+        <h4>このユーザーのお気に入り</h4>
+        <div class= "favorites_index">
+          <% @favorites.each do |favorite| %>
+            <div class= "favorite_item post_item">
+              <%= link_to post_path(favorite.post) do %>
+                <%= attachment_image_tag favorite.post, :image, size: "300x300", format: "jpeg", class: "mt-2" %>
+              <% end %>
+              <p><%= favorite.post.shop.area %> 店舗：<%= favorite.post.shop.name %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class= "col-2">
+      <%= render "shop_recommendations/index", shop_recommendations: @user.shop_recommendations %>
     </div>
   </div>
 <div>

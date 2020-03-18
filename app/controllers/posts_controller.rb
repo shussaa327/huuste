@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   def index
-    posts = Post.all
+    posts = Post.all.order(created_at: :desc)
   end
 
   def new
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if post.update(post_params)
+    if @post.update(post_params)
       redirect_to root_path
     else
       render "posts/edit"

@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 2020_03_05_142827) do
     t.integer "shop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_shop_recommendations_on_user_id", unique: true
   end
 
   create_table "shops", force: :cascade do |t|

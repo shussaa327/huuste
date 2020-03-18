@@ -1,6 +1,6 @@
 class ShopRecommendationsController < ApplicationController
   def index
-    shop_recommendations = Shop_recommendations.all
+    shop_recommendations = Shop_recommendations.all.order(created_at: :desc)
   end
 
   def create
