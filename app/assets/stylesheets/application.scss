@@ -31,19 +31,30 @@ li{
   clear: both;
 }
 
-//共通
+//共通 ここから
 
 
-//posts index
+//posts index ここから
 
 .post_item{
   float: left;
   margin: 3px;
 }
 
-//posts index
+//posts index ここまで
 
-//共通
+
+//users,posts_show tab ここから
+
+.tab_menu_content{
+  li{
+    display: inline;
+  }
+}
+
+//users,posts_show tab ここまで
+
+//共通 ここまで
 
 
 //top-page
@@ -137,6 +148,37 @@ li{
 //posts_index_page
 
 
-//users_show_page
+//users_show_page ここから
 
-//users_show_page
+.user_show_top_contents{
+  margin: 3% 0;
+}
+
+.user_show_icon{
+  text-align: center;
+  float: left;
+  padding-right: 10%;
+  p{
+    padding-top: 20%;
+  }
+}
+
+.user_show_follow_info{
+  margin: auto;
+}
+
+.tab_menu_content{
+  position: relative;
+  text-align: center;
+  li{
+    padding-right: 10%;
+  }
+}
+
+#tab_menu{
+  position: absolute;
+  bottom: 0;
+}
+
+
+//users_show_page ここまで
