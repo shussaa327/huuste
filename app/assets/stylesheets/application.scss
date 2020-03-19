@@ -36,9 +36,15 @@ li{
 
 //posts index ここから
 
+.post_index{
+  margin: 0 auto;
+  h1{
+    text-align: center;
+  }
+}
+
 .post_item{
-  float: left;
-  margin: 3px;
+  display: inline-block;
 }
 
 //posts index ここまで
@@ -137,17 +143,6 @@ li{
 //about-page
 
 
-//posts_index_page
-
-.post-index{
-  h1{
-  text-align: center;
-  }
-}
-
-//posts_index_page
-
-
 //users_show_page ここから
 
 .user_show_top_contents{
@@ -169,10 +164,10 @@ li{
 
 .tab_menu_content{
   position: relative;
+}
+
+.tab_contents{
   text-align: center;
-  li{
-    padding-right: 10%;
-  }
 }
 
 #tab_menu{
