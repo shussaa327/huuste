@@ -173,7 +173,10 @@ li{
 #tab_menu{
   position: absolute;
   bottom: 0;
+  width: 100%;
+  li{
+    padding-right: 10%;
+  }
 }
-
 
 //users_show_page ここまで
