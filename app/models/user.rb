@@ -30,4 +30,9 @@ class User < ApplicationRecord
     following_ids = "SELECT followed_id FROM relationships WHERE follower_id = :user_id"
     Post.where("user_id IN (#{following_ids}) OR user_id = :user_id", user_id: id)
   end
+
+  def shop_recommendations_count_over?(user)
+    user.shop_recommendations.count > 4
+  end
+
 end

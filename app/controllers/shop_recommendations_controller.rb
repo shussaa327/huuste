@@ -6,7 +6,11 @@ class ShopRecommendationsController < ApplicationController
   def create
     @shop = Shop.find(params[:shop_id])
     shop_recommendation = current_user.shop_recommendations.new(shop_id: @shop.id)
-    shop_recommendation.save
+    if current_user.shop_recommendations_count_over?(current_user)
+      flash[:notice] = "おすすめに登録できるのは5つまでです。"
+    else
+      shop_recommendation.save
+    end
   end
 
   def destroy

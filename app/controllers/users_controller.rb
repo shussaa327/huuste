@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user_posts = @user.posts.order(created_at: :desc)
     @favorites = @user.favorites.all.order(created_at: :desc)
-
   end
 
   def edit
