@@ -1,17 +1,28 @@
 <div class= "container">
-  <div class= "post_head_items">
-    <h1>投稿詳細</h1>
+  <div class= "row post_head_items">
+
+    <div class= "col-4">
+      <%= render "users/user_top_info", user: @user %>
+    </div>
+
+    <div class= "col-6 tab_menu_content">
+      <ul id= "tab_menu">
+        <li><a href= "#post_user_show" class= "active">投稿</a></li>
+        <li><a href= "#post_shop_show">店舗情報</a></li>
+        <li id= "post_comment_tab"><%= render "post_comments/post_comment_tab", post: @post %></li>
+      </ul>
+    </div>
+
+    <div class= "col-2">
+      <%= render "shop_recommendations/index", shop_recommendations: @user.shop_recommendations %>
+    </div>
+  </div>
+
     <h4>店舗名</h4>
     <%= link_to @post.shop.name, shop_path(@post.shop_id) %>
     <div id= "favorites_button">
       <%= render "favorites/favorite", post: @post %>
     </div>
-
-  <ul id= "tab_menu">
-    <li><a href= "#post_user_show" class= "active">投稿</a></li>
-    <li><a href= "#post_shop_show">店舗情報</a></li>
-    <li id= "post_comment_tab"><%= render "post_comments/post_comment_tab", post: @post %></li>
-  </ul>
 
   <div class= "tab_contents">
     <div id= "post_user_show" class= "tab tab1">
