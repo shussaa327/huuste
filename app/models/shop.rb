@@ -17,4 +17,5 @@ class Shop < ApplicationRecord
   def shop_recommended_by?(user)
     shop_recommendations.where(user_id: user.id).exists?
   end
+
 end

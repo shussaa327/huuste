@@ -1,3 +1,8 @@
+ <% if flash[:notice]  %>
+    <div class= "error_explanation">
+      <p><%= flash[:notice] %></p>
+    </div>
+  <% end %>
 <% if shop.shop_recommended_by?(current_user) %>
   <%= link_to "このお店のおすすめを解除する", shop_shop_recommendations_path(shop), method: :delete, remote: true %>
 <% else %>
