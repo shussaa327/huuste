@@ -25,6 +25,10 @@ li{
   list-style: none;
 }
 
+a:hover{
+  color: orange;
+}
+
 .clearfix::after{
   content: "";
   display: block;
@@ -68,6 +72,26 @@ li{
 //shop_recommendations ここまで
 
 //共通 ここまで
+
+
+//header ここから
+
+nav{
+  background-color: darkorange;
+  a{
+    color: white;
+    font-weight: bold;
+    font-family: 'Comic Sans MS', sans-serif;
+    text-shadow: 1px 1px 1px black;
+  }
+  a:hover{
+   color: black;
+   text-shadow: 1px 1px 1px white;
+   text-decoration: none;
+  }
+}
+
+//header ここまで
 
 
 //top-page
@@ -129,7 +153,7 @@ li{
 }
 
 .how_to_sections_text{
-  h4{
+  h3{
     text-align: center;
     margin-bottom: 10%;
     border-bottom: 2px solid orange;
