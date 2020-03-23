@@ -7,7 +7,7 @@ class ShopRecommendationsController < ApplicationController
     @shop = Shop.find(params[:shop_id])
     shop_recommendation = current_user.shop_recommendations.new(shop_id: @shop.id)
     if current_user.shop_recommendations_count_over?(current_user)
-      flash[:notice] = "おすすめに登録できるのは5つまでです。"
+      @shop_recommendations_count_over_message = "おすすめに登録できるのは5つまでです。"
     else
       shop_recommendation.save
     end
