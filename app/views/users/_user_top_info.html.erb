@@ -4,9 +4,6 @@
       <%= attachment_image_tag user, :user_image, size: "90x90",format: "jpeg",fallback: "default-icon-img.jpeg", class: "rounded-circle" %>
     <% end %>
     <p><%= user.name %></p>
-    <% if user == current_user %>
-      <p><%= link_to "編集する", edit_user_path(user) %></p>
-    <% end %>
   </div>
 
   <div class= "user_show_follow_info">
@@ -16,5 +13,10 @@
     <div class= "follow_button">
       <%= render "relationships/follow_link", user: user %>
     </div>
+  </div>
+  <div class= "user_edit_link">
+    <% if user == current_user %>
+      <p><%= link_to "編集する", edit_user_path(user) %></p>
+    <% end %>
   </div>
 </div>
