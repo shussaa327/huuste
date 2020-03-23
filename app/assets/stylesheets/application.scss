@@ -206,7 +206,15 @@ nav{
 }
 
 .user_show_follow_info{
-  margin: auto;
+  text-align: center;
+  padding-top: 5%;
+}
+
+#follow_counts{
+  margin-bottom: 10%;
+  a{
+    padding-right: 5%;
+  }
 }
 
 .tab_menu_content{
