@@ -22,8 +22,10 @@ $(document).on("turbolinks:load", function(){
 
   $('.tab_contents .tab[id != "post_user_show"][id != "user_info_posts"]').hide();
 
-  $('#tab_menu a').on('click', function(){
+  $('.tab_menu a').on('click', function(){
     $(".tab_contents .tab").hide();
+    $(".tab_menu .active").removeClass("active");
+    $(this).addClass("active");
     $($(this).attr("href")).show();
     return false;
   });
