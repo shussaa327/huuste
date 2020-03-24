@@ -1,4 +1,4 @@
  <div class= "follow_count_items">
-   <%= link_to "フォロー #{user.follower.count}", {controller: :relationships, action: :following, id: user.id} %>
-   <%= link_to "フォロワー #{user.followed.count}",{controller: :relationships, action: :follower, id: user.id} %>
+   <p><%= link_to "フォロー #{user.follower.count}", {controller: :relationships, action: :following, id: user.id} %></p>
+   <p><%= link_to "フォロワー #{user.followed.count}",{controller: :relationships, action: :follower, id: user.id} %></p>
 </div>

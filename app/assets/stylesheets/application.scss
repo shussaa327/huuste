@@ -259,10 +259,29 @@ nav{
   }
 }
 
-#user_info_posts, #user_introduction, #user_info_favorites{
+.user_show_shop_recommendations{
+  text-align: center;
+}
+
+#user_info_posts, #user_info_favorites{
   p{
     padding-top: 15%;
   }
+}
+
+.user_empty_introduction_message{
+  padding-top: 15%;
+}
+
+.user_introduction_text{
+  margin: 5% 10%;
+  padding: 2%;
+  border: 2px solid #c0c0c0;
+  text-align: left;
+}
+
+.user_post_area_index{
+  text-align: center;
 }
 
 
