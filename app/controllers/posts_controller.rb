@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+
   def index
     posts = Post.all.order(created_at: :desc)
   end
@@ -49,4 +51,12 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:comment, :image, :rating, :shop_id)
   end
+
+  def ensure_correct_user
+    post = Post.find(params[:id])
+    if post.user_id != current_user.id
+      redirect_to root_path
+    end
+  end
+
 end
