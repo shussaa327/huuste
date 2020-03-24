@@ -1,7 +1,7 @@
 <div class= "shop-recommendations">
   <h5>このユーザーのおすすめ店</h5>
   <% if shop_recommendations.blank? %>
-    <p>現在、おすすめ店は登録されていません</p>
+    <p class= "shop_no_recommendation_message">現在、おすすめ店は登録されていません</p>
   <% else %>
     <% shop_recommendations.each do |shop_recommendation| %>
       <div class= "shop_recommendation">

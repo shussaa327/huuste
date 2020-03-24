@@ -51,7 +51,6 @@ footer{
   margin-top: auto;
 }
 
-//application.html ここまで
 
 
 //posts index ここから
@@ -67,7 +66,11 @@ footer{
   display: inline-block;
 }
 
-//posts index ここまで
+.post_no_item_message{
+  text-align: center;
+  padding-top: 15%;
+}
+
 
 
 //users,posts_show tab ここから
@@ -78,19 +81,19 @@ footer{
   }
 }
 
-//users,posts_show tab ここまで
-
 
 //shop_recommendations ここから
 
+.shop-recommendations{
+  margin-left: 5%;
+}
+
+.shop_no_recommendation_message{
+  padding-top: 20%;
+}
 
 
-//shop_recommendations ここまで
-
-//共通 ここまで
-
-
-//header ここから
+//header
 
 nav{
   background-color: darkorange;
@@ -107,10 +110,16 @@ nav{
   }
 }
 
-//header ここまで
+.navbar-brand{
+  font-size: 150%;
+}
+
+.nav-item{
+  font-size: 110%;
+}
 
 
-//top-page
+//home_topページ
 
 .main-visual{
   height: 300px;
@@ -130,10 +139,9 @@ nav{
   }
 }
 
-//top-page
 
 
-//about-page
+//homes_aboutページ
 
 .concept-section{
   height: 300px;
@@ -187,10 +195,8 @@ nav{
   }
 }
 
-//about-page
 
-
-//users_show_page ここから
+//users_showページ
 
 .user_show_top_contents{
   margin: 3% 0;
@@ -253,10 +259,14 @@ nav{
   }
 }
 
-//users_show_page ここまで
+#user_info_posts, #user_introduction, #user_info_favorites{
+  p{
+    padding-top: 15%;
+  }
+}
 
 
-//posts_show_page ここから
+//posts_showページ
 
 .post_show_top_contents{
   margin: 3% 0;
