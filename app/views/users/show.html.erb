@@ -19,21 +19,11 @@
   <div class= "row user_show_bottom_contents">
     <div class= "tab_contents col-10">
       <div id= "user_following" class= "tab tab1">
-        <h4>フォロー中</h4>
-        <% if @user.following_user.where.not(id: @user.id).count < 1 %>
-          <p>フォロー中のユーザーはいません</p>
-        <% else %>
-          <%= render "relationships/following", user: @user %>
-        <% end %>
+        <%= render "relationships/following", user: @user %>
       </div>
 
       <div id= "user_followed" class= "tab tab2">
-        <h4>フォロワー</h4>
-        <% if @user.follower_user.where.not(id: @user.id).count < 1 %>
-          <p>フォロワーはいません</p>
-        <% else %>
-          <%= render "relationships/follower", user: @user %>
-        <% end %>
+        <%= render "relationships/follower", user: @user %>
       </div>
 
       <div id= "user_info_posts" class= "tab tab3">
