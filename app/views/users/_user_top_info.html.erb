@@ -7,16 +7,27 @@
   </div>
 
   <div class= "user_show_follow_info">
+    <div class= "user_show_follow_info_items">
     <div class="" id="follow_counts">
       <%= render "relationships/follow_people_num", user: user %>
     </div>
     <div class= "follow_button">
       <%= render "relationships/follow_link", user: user %>
     </div>
+    <div class= "user_edit_link">
+      <% if user == current_user %>
+        <p><%= link_to "編集する", edit_user_path(user) %></p>
+      <% end %>
+    </div>
   </div>
-  <div class= "user_edit_link">
-    <% if user == current_user %>
-      <p><%= link_to "編集する", edit_user_path(user) %></p>
+  </div>
+
+  <div class= "user_introduction">
+    <h6>Profile</h6>
+    <% if user.introduction.blank? %>
+      <p class= "user_empty_introduction_message">まだプロフィールがありません</p>
+    <% else %>
+      <p class= "user_introduction_text"><%= user.introduction %></p>
     <% end %>
   </div>
 </div>

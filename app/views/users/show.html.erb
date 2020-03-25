@@ -1,20 +1,20 @@
 <div class= "container">
   <div class= "row user_show_top_contents">
-    <div class= "col-3">
+    <div class= "col-10">
       <%= render "users/user_top_info", user: @user %>
-    </div>
-
-    <div class= "col-7 tab_menu_content">
-      <ul class= "tab_menu">
-        <li>|<a href= "#user_info_posts" class= "active">投稿一覧</a></li>
-        <li>|<a href= "#user_introduction">プロフィール</a>|</li>
-        <li><a href= "#user_info_favorites">お気に入り(<%= @user.favorites.count %>)</a>|</li>
-      </ul>
     </div>
 
     <div class= "col-2 user_show_shop_recommendations">
       <%= render "shop_recommendations/index", shop_recommendations: @user.shop_recommendations %>
     </div>
+  </div>
+
+  <div class= "tab_menu_contents">
+    <ul class= "tab_menu">
+      <li>|<a href= "#user_info_posts" class= "active">投稿一覧</a></li>
+      <li>|<a href= "#user_introduction">プロフィール</a>|</li>
+      <li><a href= "#user_info_favorites">お気に入り(<%= @user.favorites.count %>)</a>|</li>
+    </ul>
   </div>
 
   <div class= "row user_show_bottom_contents">

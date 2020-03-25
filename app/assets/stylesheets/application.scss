@@ -35,22 +35,40 @@ a:hover{
   clear: both;
 }
 
+//tab_menu レイアウト
 
-//共通 ここから
-
-//application.html ここから
-
-body,
-#wrapper{
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+.tab_menu_contents{
+  text-align: center;
+  margin: 5% 0;
 }
 
-footer{
-  margin-top: auto;
+.tab_menu{
+  li{
+    display: inline;
+  }
+  a{
+    padding: 0 5%;
+    color: black;
+    opacity: 0.7;
+    font-size: 120%;
+  }
+
+  a:hover{
+    opacity: 1;
+    text-decoration: none;
+    border-bottom: 2px solid orange;
+  }
+
+  a:active{
+    opacity: 1;
+    text-decoration: none;
+    border-bottom: 2px solid orange;
+  }
 }
 
+
+
+//レンダリング　レイアウト　ここから
 
 
 //posts index ここから
@@ -72,14 +90,50 @@ footer{
 }
 
 
+//_user_top_infoページ
+
+.user_show_icon{
+  text-align: center;
+  display: inline-block;
+  padding-right: 3%;
+  width: 20%;
+  p{
+    padding-top: 20%;
+  }
+}
+
+.user_show_follow_info{
+  display: inline-block;
+  width: 20%;
+}
+
+.user_show_follow_info_items{
+  text-align: center;
+  float: left;
+}
+
+#follow_counts{
+  margin-bottom: 3%;
+}
+
+.user_edit_link{
+  padding-top: 3%;
+}
+
+.user_introduction{
+  display: inline-block;
+  width: 57%;
+}
+
+.user_introduction_text{
+  padding: 2%;
+  border: 2px solid #c0c0c0;
+  text-align: left;
+}
+
 
 //users,posts_show tab ここから
 
-.tab_menu_content{
-  li{
-    display: inline;
-  }
-}
 
 
 //shop_recommendations ここから
@@ -92,6 +146,21 @@ footer{
   padding-top: 20%;
 }
 
+//レンダリング　レイアウト　ここまで
+
+
+//application.html
+
+body,
+#wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer{
+  margin-top: auto;
+}
 
 //header
 
@@ -202,63 +271,6 @@ nav{
   margin: 3% 0;
 }
 
-.user_show_icon{
-  text-align: center;
-  float: left;
-  padding-right: 10%;
-  p{
-    padding-top: 20%;
-  }
-}
-
-.user_show_follow_info{
-  text-align: center;
-  padding-top: 5%;
-}
-
-#follow_counts{
-  margin-bottom: 10%;
-  a{
-    padding-right: 5%;
-  }
-}
-
-.user_edit_link{
-  text-align: center;
-}
-
-.tab_menu_content{
-  position: relative;
-}
-
-.tab_contents{
-  text-align: center;
-}
-
-.tab_menu{
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  a{
-    padding: 0 5%;
-    color: black;
-    opacity: 0.7;
-    font-size: 120%;
-  }
-
-  a:hover{
-    opacity: 1;
-    text-decoration: none;
-    border-bottom: 2px solid orange;
-  }
-
-  a:active{
-    opacity: 1;
-    text-decoration: none;
-    border-bottom: 2px solid orange;
-  }
-}
-
 .user_show_shop_recommendations{
   text-align: center;
 }
@@ -267,17 +279,6 @@ nav{
   p{
     padding-top: 15%;
   }
-}
-
-.user_empty_introduction_message{
-  padding-top: 15%;
-}
-
-.user_introduction_text{
-  margin: 5% 10%;
-  padding: 2%;
-  border: 2px solid #c0c0c0;
-  text-align: left;
 }
 
 .user_post_area_index{
