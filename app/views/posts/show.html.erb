@@ -9,7 +9,7 @@
   </div>
 
   <div class= "tab_menu_contents">
-    <ul class= "tab_menu">
+    <ul class= "tab_menu tab_menu_items">
       <li>|<a href= "#post_user_show" class= "active">投稿</a></li>
       <li>|<a href= "#post_shop_show">店舗情報</a>|</li>
       <li id= "post_comment_tab"><%= render "post_comments/post_comment_tab", post: @post %>|</li>
@@ -17,7 +17,25 @@
   </div>
 
   <div class= "tab_contents">
-    <div id= "post_user_show" class= "row tab tab1">
+    <div id= "user_following" class= "tab tab1">
+      <h4>フォロー中</h4>
+      <% if @user.following_user.where.not(id: @user.id).count < 1 %>
+        <p>フォロー中のユーザーはいません</p>
+      <% else %>
+        <%= render "relationships/following", user: @user %>
+      <% end %>
+    </div>
+
+    <div id= "user_followed" class= "tab tab2">
+      <h4>フォロワー</h4>
+      <% if @user.follower_user.where.not(id: @user.id).count < 1 %>
+        <p>フォロワーはいません</p>
+      <% else %>
+        <%= render "relationships/follower", user: @user %>
+      <% end %>
+    </div>
+
+    <div id= "post_user_show" class= "row tab tab3">
       <div class= "col-8"><%= attachment_image_tag @post, :image, size: "300x300", format: "jpeg" %></div>
       <div class= "col-4">
         <h4>店舗名</h4>
@@ -36,11 +54,11 @@
       </div>
     </div>
 
-    <div id= "post_shop_show" class= "tab tab2">
+    <div id= "post_shop_show" class= "tab tab4">
       <%= render "shops/show", shop: @post.shop %>
     </div>
 
-    <div id= "post_comments" class= "post_comments tab tab3">
+    <div id= "post_comments" class= "post_comments tab tab5">
       <%= render "post_comments/post_comment", post: @post, post_comment: @post_comment %>
     </div>
   </div>

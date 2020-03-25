@@ -26,6 +26,14 @@ class User < ApplicationRecord
     following_user.include?(user)
   end
 
+  def search_follower_user(user)
+    user.follower_user.where.not(id: user.id)
+  end
+
+  def search_following_user(user)
+    user.following_user.where.not(id: user.id)
+  end
+
   def feed
     following_ids = "SELECT followed_id FROM relationships WHERE follower_id = :user_id"
     Post.where("user_id IN (#{following_ids}) OR user_id = :user_id", user_id: id)
