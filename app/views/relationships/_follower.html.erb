@@ -1,14 +1,16 @@
-<div class = "follower_index">
+<div class = "follower_index follow_user_index_content">
   <h4>フォロワー</h4>
   <% if user.follower_user.where.not(id: user.id).count < 1 %>
     <p>フォロワーはいません</p>
   <% else %>
-    <% user.follower_user.where.not(id: user.id).each do |user| %>
-      <div class = "row">
-        <%= attachment_image_tag user, :user_image, size: "40x40", format: "jpeg", fallback: "default-icon-img.jpeg", class: "rounded-circle" %>
-        <%= user.name %>
-        <%= link_to "詳細", user_path(user) %>
-      </div>
-    <% end %>
+    <div class= "follow_user_index">
+      <% user.follower_user.where.not(id: user.id).each do |user| %>
+        <div class = "follower_user follow_people">
+          <%= attachment_image_tag user, :user_image, size: "40x40", format: "jpeg", fallback: "default-icon-img.jpeg", class: "rounded-circle" %>
+          <%= user.name %>
+          <%= link_to "詳細", user_path(user) %>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 </div>

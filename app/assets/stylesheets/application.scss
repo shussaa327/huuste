@@ -165,6 +165,20 @@ a:hover{
   }
 }
 
+//_following,_follower 共通
+
+.follow_user_index_content{
+  text-align: center;
+}
+
+.follow_user_index{
+  float: right;
+}
+
+.follow_people{
+  text-align: left;
+}
+
 //レンダリング　レイアウト　ここまで
 
 
@@ -284,6 +298,19 @@ nav{
 }
 
 
+//users,posts_showページ　共通部分
+
+#user_following{
+  float: left;
+  margin-left: 20%;
+}
+
+#user_followed{
+  float: left;
+  margin-left: 20%;
+}
+
+
 //users_showページ
 
 .user_show_top_contents{
@@ -313,4 +340,3 @@ nav{
   margin: 3% 0;
 }
 
-//posts_show_page ここまで
