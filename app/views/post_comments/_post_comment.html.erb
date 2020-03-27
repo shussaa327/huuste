@@ -18,7 +18,7 @@
           <td class= "post_comment_area"><%= post_comment.comment %></td>
           <% if post_comment.user == current_user %>
             <td>
-              <%= link_to "削除", post_post_comment_path(post,post_comment), method: :delete, remote: true, "data-confirm" => "コメントを削除しますか？" %>
+              <%= link_to "削除する", post_post_comment_path(post,post_comment), method: :delete, remote: true, "data-confirm" => "コメントを削除しますか？" %>
             </td>
           <% end %>
         </tr>
@@ -29,7 +29,7 @@
   <div class= "col-3 form-group post_comment_form">
     <% if user_signed_in? %>
       <%= form_for [post, post_comment], remote: true do |f| %>
-        <%= f.text_area :comment, placeholder: "コメントを入力", class: "form-control", rows: "4" %>
+        <%= f.text_area :comment, placeholder: "コメントを入力(150文字以内)", class: "form-control", rows: "4" %>
         <%= f.submit "送信", class: "post_comment_form_submit_btn" %>
       <% end %>
     <% end %>
