@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :post_comments, dependent: :destroy
   attachment :user_image
   validates :name, presence: true
+  validates :introduction, length: {maximum: 200}
 
   def follow(user_id)
     follower.create(followed_id: user_id)

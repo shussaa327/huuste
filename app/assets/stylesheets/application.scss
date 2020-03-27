@@ -19,6 +19,7 @@
 *{
   margin: 0;
   padding: 0;
+  word-break: break-all;
 }
 
 li{
@@ -61,7 +62,6 @@ a:hover{
 
   a:active{
     opacity: 1;
-    text-decoration: none;
     border-bottom: 2px solid orange;
   }
 }
@@ -167,16 +167,15 @@ a:hover{
 
 //_following,_follower 共通
 
-.follow_user_index_content{
-  text-align: center;
-}
-
-.follow_user_index{
-  float: right;
+.follow_user_index_table{
+  padding-left: 40%;
+  padding-top: 3%;
 }
 
 .follow_people{
-  text-align: left;
+  a:hover{
+    text-decoration: none;
+  }
 }
 
 //レンダリング　レイアウト　ここまで
@@ -301,13 +300,12 @@ nav{
 //users,posts_showページ　共通部分
 
 #user_following{
-  float: left;
-  margin-left: 20%;
+
 }
 
 #user_followed{
-  float: left;
-  margin-left: 20%;
+
+
 }
 
 
@@ -339,4 +337,35 @@ nav{
 .post_show_top_contents{
   margin: 3% 0;
 }
+
+.post_comment_table{
+  width: 100%;
+}
+
+.post_comment_user{
+  p{
+    display: inline-block;
+    padding-left: 5%;
+  }
+}
+
+.post_comment_area{
+  width: 60%;
+}
+
+.post_comment_form{
+  input[type="text"]{
+    width: 30%;
+    height: 40%;
+  }
+}
+
+.post_comment_form_submit_btn{
+  float: right;
+  margin-top: 3%;
+}
+
+
+
+
 
