@@ -1,44 +1,61 @@
 <div class= "container">
   <div class= "row user_show_top_contents">
-    <div class= "col-4">
+    <div class= "col-10">
       <%= render "users/user_top_info", user: @user %>
     </div>
 
-    <div class= "col-6 tab_menu_content">
-      <ul id= "tab_menu">
-        <li><a href= "#user_info_posts" class= "active">投稿一覧</a></li>
-        <li><a href= "#user_introduction">プロフィール</a></li>
-        <li><a href= "#user_info_favorites">お気に入り(<%= @user.favorites.count %>)</a></li>
-      </ul>
-    </div>
-
-    <div class= "col-2">
+    <div class= "col-2 user_show_shop_recommendations">
       <%= render "shop_recommendations/index", shop_recommendations: @user.shop_recommendations %>
     </div>
   </div>
 
-  <div class= "tab_contents">
-    <div id= "user_info_posts" class= "tab tab1">
-      <%= render "posts/index", posts: @user_posts %>
-    </div>
+  <div class= "tab_menu_contents">
+    <ul class= "tab_menu tab_menu_items">
+      <li>|<a href= "#user_info_posts" class= "active">投稿一覧</a>|</li>
+      <li><a href= "#user_info_favorites">お気に入り(<%= @user.favorites.count %>)</a>|</li>
+    </ul>
+  </div>
 
-    <div id= "user_introduction" class= "tab tab2">
-      <h4>プロフィール</h4>
-      <%= @user.introduction %>
-    </div>
+  <div class= "row user_show_bottom_contents">
+    <div class= "tab_contents col-10">
+      <div id= "user_following" class= "tab tab1">
+        <%= render "relationships/following", user: @user %>
+      </div>
 
-    <div id= "user_info_favorites" class= "tab tab3">
-      <h4>このユーザーのお気に入り</h4>
-      <div class= "favorites_index">
-        <% @favorites.each do |favorite| %>
-          <div class= "favorite_item post_item">
-            <%= link_to post_path(favorite.post) do %>
-              <%= attachment_image_tag favorite.post, :image, size: "300x300", format: "jpeg", class: "mt-2" %>
+      <div id= "user_followed" class= "tab tab2">
+        <%= render "relationships/follower", user: @user %>
+      </div>
+
+      <div id= "user_info_posts" class= "tab tab3">
+        <% if @user_posts.count < 1 %>
+          <p class= "user_show_tab_empty_message">まだ投稿がありません</p>
+        <% else %>
+          <%= render "posts/index", posts: @user_posts %>
+        <% end %>
+      </div>
+
+      <div id= "user_info_favorites" class= "tab tab4">
+        <h4>このユーザーのお気に入り</h4>
+        <% if @favorites.blank? %>
+          <p class= "user_show_tab_empty_message">まだお気に入りが登録されていません</p>
+        <% else %>
+          <div class= "favorites_index">
+            <% @favorites.each do |favorite| %>
+              <div class= "favorite_item post_item">
+                <%= link_to post_path(favorite.post) do %>
+                  <%= attachment_image_tag favorite.post, :image, size: "300x300", format: "jpeg", class: "mt-2" %>
+                <% end %>
+                <p><%= favorite.post.shop.area %> 店舗：<%= favorite.post.shop.name %></p>
+              </div>
             <% end %>
-            <p><%= favorite.post.shop.area %> 店舗：<%= favorite.post.shop.name %></p>
           </div>
         <% end %>
       </div>
+    </div>
+
+    <div class= "col-2 user_post_area_index">
+      <h5>ユーザー投稿<br>
+          地域一覧</h5>
     </div>
   </div>
 </div>

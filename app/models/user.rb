@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :post_comments, dependent: :destroy
   attachment :user_image
   validates :name, presence: true
+  validates :introduction, length: {maximum: 200}
 
   def follow(user_id)
     follower.create(followed_id: user_id)
@@ -24,6 +25,14 @@ class User < ApplicationRecord
 
   def following?(user)
     following_user.include?(user)
+  end
+
+  def search_follower_user(user)
+    user.follower_user.where.not(id: user.id)
+  end
+
+  def search_following_user(user)
+    user.following_user.where.not(id: user.id)
   end
 
   def feed

@@ -1,2 +1,4 @@
- <p><%= link_to "フォロー #{user.follower.count}", {controller: :relationships, action: :following} %></p>
- <p><%= link_to "フォロワー #{user.followed.count}",{controller: :relationships, action: :follower} %></p>
+ <div class= "follow_count_items tab_menu">
+   <a href= "#user_following"><%= "フォロー #{user.follower.count}" %></a>
+   <a href= "#user_followed"><%= "フォロワー #{user.followed.count}" %></a>
+</div>

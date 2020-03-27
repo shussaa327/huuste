@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :shop, optional: true
   attachment :image
-  validates :comment, presence: true
+  validates :comment, presence: true, length: {maximum: 200}
   validates :image, presence: true
 
   def favorited_by?(user)

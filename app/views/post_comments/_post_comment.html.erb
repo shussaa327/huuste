@@ -1,20 +1,37 @@
-<p><%= post.post_comments.count %>件のコメント</p>
-  <% post.post_comments.each do |post_comment| %>
-    <div class = "post_comments">
-      <%= link_to user_path(post_comment.user) do %>
-        <%= attachment_image_tag post_comment.user, :user_image, size: "40x40", format: "jpeg", fallback: "default-icon-img.jpeg",class: "rounded-circle" %>
+<div class= "row">
+  <div class= "col-9">
+    <p><%= post.post_comments.count %>件のコメント</p>
+    <table class= "table post_comment_table">
+      <tr>
+        <th>user</th>
+        <th>comment</th>
+        <th></th>
+      </tr>
+      <% post.post_comments.each do |post_comment| %>
+        <tr class = "post_comments">
+          <td class= "post_comment_user">
+            <%= link_to user_path(post_comment.user) do %>
+              <%= attachment_image_tag post_comment.user, :user_image, size: "40x40", format: "jpeg", fallback: "default-icon-img.jpeg",class: "rounded-circle" %>
+            <% end %>
+            <p><%= post_comment.user.name %></p>
+          </td>
+          <td class= "post_comment_area"><%= post_comment.comment %></td>
+          <% if post_comment.user == current_user %>
+            <td>
+              <%= link_to "削除する", post_post_comment_path(post,post_comment), method: :delete, remote: true, "data-confirm" => "コメントを削除しますか？" %>
+            </td>
+          <% end %>
+        </tr>
       <% end %>
-      <%= post_comment.user.name %>
-      <%= post_comment.comment %>
-      <% if post_comment.user == current_user %>
-        <%= link_to "削除", post_post_comment_path(post,post_comment), method: :delete, remote: true, "data-confirm" => "コメントを削除しますか？" %>
-      <% end %>
-    </div>
-  <% end %>
+    </table>
+  </div>
 
-  <% if user_signed_in? %>
-    <%= form_for [post, post_comment], remote: true do |f| %>
-      <%= f.text_area :comment, placeholder: "コメントを入力" %>
-      <%= f.submit "送信" %>
+  <div class= "col-3 form-group post_comment_form">
+    <% if user_signed_in? %>
+      <%= form_for [post, post_comment], remote: true do |f| %>
+        <%= f.text_area :comment, placeholder: "コメントを入力(150文字以内)", class: "form-control", rows: "4" %>
+        <%= f.submit "送信", class: "post_comment_form_submit_btn" %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+</div>
