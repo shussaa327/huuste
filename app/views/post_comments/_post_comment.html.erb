@@ -29,7 +29,7 @@
   <div class= "col-3 form-group post_comment_form">
     <% if user_signed_in? %>
       <%= form_for [post, post_comment], remote: true do |f| %>
-        <%= f.text_area :comment, placeholder: "コメントを入力(150文字以内)", class: "form-control", rows: "4" %>
+        <%= f.text_area :comment, placeholder: "コメントを入力(100文字以内)", class: "form-control", rows: "6" %>
         <%= f.submit "送信", class: "post_comment_form_submit_btn" %>
       <% end %>
     <% end %>

@@ -28,6 +28,7 @@
 
       <div id= "user_info_posts" class= "tab tab3">
         <% if @user_posts.count < 1 %>
+          <h1>snap shots</h1>
           <p class= "user_show_tab_empty_message">まだ投稿がありません</p>
         <% else %>
           <%= render "posts/index", posts: @user_posts %>

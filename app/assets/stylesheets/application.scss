@@ -14,6 +14,8 @@
  *= require_self
  */
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 
 *{
@@ -93,6 +95,10 @@ a:hover{
 
 
 //_user_top_infoページ
+
+.user_top_info_items{
+  margin-top: 3%;
+}
 
 .user_show_icon{
   text-align: center;
@@ -357,7 +363,7 @@ nav{
 }
 
 .user_show_tab_empty_message{
-  padding-top: 15%;
+  padding-top: 10%;
 }
 
 .user_post_area_index{
