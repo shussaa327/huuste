@@ -273,27 +273,29 @@ footer{
 
 //header
 
-nav{
-  background-color: darkorange;
-  a{
-    color: white;
-    font-weight: bold;
-    font-family: 'Comic Sans MS', sans-serif;
-    text-shadow: 1px 1px 1px black;
+header{
+  nav{
+    background-color: darkorange;
+    a{
+      color: white;
+      font-weight: bold;
+      font-family: 'Comic Sans MS', sans-serif;
+      text-shadow: 1px 1px 1px black;
+    }
+    a:hover{
+     color: black;
+     text-shadow: 1px 1px 1px white;
+     text-decoration: none;
+    }
   }
-  a:hover{
-   color: black;
-   text-shadow: 1px 1px 1px white;
-   text-decoration: none;
+
+  .navbar-brand{
+    font-size: 150%;
   }
-}
 
-.navbar-brand{
-  font-size: 150%;
-}
-
-.nav-item{
-  font-size: 110%;
+  .nav-item{
+    font-size: 110%;
+  }
 }
 
 

@@ -38,6 +38,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post_comment = PostComment.new
     @user = @post.user
+    @following_users = @user.search_following_user(@user).page(params[:page]).reverse_order
+    @follower_users = @user.search_follower_user(@user).page(params[:page]).reverse_order
   end
 
   def destroy

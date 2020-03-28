@@ -3,9 +3,9 @@ class HomesController < ApplicationController
     if user_signed_in?
       @posts = current_user.feed.order(created_at: :desc)
     else
-      @posts = Post.all.order(created_at: :desc)
+      @posts = Post.page(params[:page]).reverse_order.order(created_at: :desc)
     end
-    @users = User.all
+      @users = User.page(params[:page]).reverse_order
   end
 
   def about

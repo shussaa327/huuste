@@ -1,6 +1,6 @@
 <div class = "follower_index follow_user_index_content">
   <h4>フォロワー</h4>
-  <% if user.follower_user.where.not(id: user.id).count < 1 %>
+  <% if follower_users.count < 1 %>
     <p>フォロワーはいません</p>
   <% else %>
     <table class= "table follow_user_index_table">
@@ -9,7 +9,7 @@
         <th>name</th>
         <th></th>
       </tr>
-      <% user.follower_user.where.not(id: user.id).each do |user| %>
+      <% follower_users.each do |user| %>
         <tr class = "follower_user follow_people">
           <td>
             <%= link_to user_path(user) do %>
@@ -20,6 +20,7 @@
           <td><%= link_to "詳細", user_path(user) %></td>
         </tr>
       <% end %>
+      <%= paginate follower_users, class: "paginate" %>
     </table>
   <% end %>
 </div>
