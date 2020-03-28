@@ -73,7 +73,7 @@ a:hover{
 //レンダリング　レイアウト　ここから
 
 
-//posts index ここから
+//posts indexレイアウト
 
 .post_index{
   margin: 0 auto;
@@ -94,7 +94,7 @@ a:hover{
 }
 
 
-//_user_top_infoページ
+//_user_top_infoレイアウト
 
 .user_top_info_items{
   margin-top: 3%;
@@ -139,7 +139,8 @@ a:hover{
   text-align: left;
 }
 
-//_follow_people_numページ
+
+//_follow_people_numレイアウト
 
 .follow_count_items{
   a{
@@ -149,11 +150,7 @@ a:hover{
 }
 
 
-//users,posts_show tab ここから
-
-
-
-//shop_recommendations ここから
+//shop_recommendationsレイアウト
 
 .shop-recommendations{
   margin-left: 5%;
@@ -171,7 +168,8 @@ a:hover{
   }
 }
 
-//_following,_follower 共通
+
+//_following,_follower 共通レイアウト
 
 .follow_user_index_table{
   padding-left: 40%;
@@ -184,7 +182,8 @@ a:hover{
   }
 }
 
-//post_commentページ
+
+//post_commentレイアウト
 
 .post_comment_table{
   width: 100%;
@@ -216,10 +215,41 @@ a:hover{
   margin-top: 3%;
 }
 
-//favoriteページ
+
+//favoriteレイアウト
 
 .heart_favorited{
   color: red;
+}
+
+
+//post_formレイアウト
+
+.post_form_content{
+  margin-top: 3%;
+}
+
+.post_form_image_section{
+  label{
+    padding-top: 5%;
+    display: block;
+  }
+}
+
+.post_text_form_section_items{
+  margin-top: 3%;
+  table{
+    width: 100%;
+  }
+  textarea{
+    width: 100%;
+  }
+  #post_rating{
+    width: 30%;
+  }
+  .post_form_submit{
+    float:right;
+  }
 }
 
 
@@ -358,15 +388,6 @@ nav{
 
 //users,posts_showページ　共通部分
 
-#user_following{
-
-}
-
-#user_followed{
-
-
-}
-
 
 //users_showページ
 
@@ -397,6 +418,41 @@ nav{
 
 .user_post_area_index{
   text-align: center;
+}
+
+
+//users_editページ
+
+.user_edit_section{
+  margin-top: 3%;
+  margin-bottom: 3%;
+  h1{
+    padding-bottom: 3%;
+  }
+}
+
+.user_icon_edit{
+  label{
+    display: block;
+    padding-top: 5%;
+  }
+  .btn{
+    margin-top: 20%;
+  }
+}
+
+.user_text_form_edit_section{
+  margin-top: 3%;
+  table{
+    width: 100%;
+  }
+  textarea{
+    width: 100%;
+  }
+}
+
+.user_edit_form_submit{
+  float: right;
 }
 
 
@@ -449,38 +505,24 @@ nav{
   display: inline-block;
 }
 
-//users_editページ
 
-.user_edit_section{
-  margin-top: 3%;
-  margin-bottom: 3%;
-  h1{
-    padding-bottom: 3%;
+//post_editページ
+
+.post_edit_content{
+  margin: 3% auto;
+}
+
+.post_edit_content{
+  .btn-danger{
+    margin-top: 5%;
   }
 }
 
-.user_icon_edit{
-  label{
-    display: block;
-    padding-top: 5%;
-  }
-  .btn{
-    margin-top: 20%;
-  }
-}
 
-.user_text_form_edit_section{
-  margin-top: 3%;
-  table{
-    width: 100%;
-  }
-  textarea{
-    width: 100%;
-  }
-}
+//posts_newページ
 
-.user_edit_form_submit{
-  float: right;
+.post_new_content{
+  margin: 3% auto;
 }
 
 
