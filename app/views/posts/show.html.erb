@@ -55,8 +55,8 @@
       <%= render "shops/show", shop: @post.shop %>
     </div>
 
-    <div id= "post_comments" class= "post_comments tab tab5">
-      <%= render "post_comments/post_comment", post: @post, post_comment: @post_comment %>
+    <div id= "post_comments" class= "tab tab5">
+      <%= render "post_comments/post_comment", post: @post, post_page_comments: @post_page_comments, post_comment: @post_comment %>
     </div>
   </div>
 </div>

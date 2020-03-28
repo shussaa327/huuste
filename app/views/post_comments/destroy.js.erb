@@ -1,2 +1,2 @@
-$("#post_comments").html("<%= j(render 'post_comments/post_comment',post: @post, post_comment: @post_comment) %>");
+$("#post_comments").html("<%= j(render 'post_comments/post_comment',post: @post, post_page_comments: @post_page_comments, post_comment: @post_comment) %>");
 $("#post_comment_tab").html("<%= j(render 'post_comments/post_comment_tab',post: @post) %>");

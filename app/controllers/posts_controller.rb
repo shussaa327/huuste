@@ -36,6 +36,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @post_page_comments = @post.post_comments.page(params[:page]).reverse_order
     @post_comment = PostComment.new
     @user = @post.user
     @following_users = @user.search_following_user(@user).page(params[:page]).reverse_order
