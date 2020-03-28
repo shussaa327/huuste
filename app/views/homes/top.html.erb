@@ -3,17 +3,20 @@
     <h1>food<br>Humanity × taste</h1>
   </div>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="top-post-items col-10">
-      <%= render "posts/index", posts: @posts %>
-    </div>
-    <div class="sidebar col-2">
-      <p>地域一覧</p>
-      <p>人気のユーザー</p>
-      <%= render "users/index", users: @users %>
-      <p>まだお店の情報が登録されていない場合はこちらから↓</p>
-      <%= link_to "新しくお店を登録する", new_shop_path %>
+
+<div class= "top_main_content">
+  <div class="container">
+    <div class="row">
+      <div class="top-post-items col-10">
+        <%= render "posts/index", posts: @posts %>
+      </div>
+      <div class="sidebar col-2">
+        <p>地域一覧</p>
+        <p>人気のユーザー</p>
+        <%= render "users/index", users: @users %>
+        <p>まだお店の情報が登録されていない場合はこちらから↓</p>
+        <%= link_to "新しくお店を登録する", new_shop_path %>
+      </div>
     </div>
   </div>
 </div>

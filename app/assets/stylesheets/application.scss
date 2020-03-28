@@ -216,6 +216,12 @@ a:hover{
   margin-top: 3%;
 }
 
+//favoriteページ
+
+.heart_favorited{
+  color: red;
+}
+
 
 //レンダリング　レイアウト　ここまで
 
@@ -231,6 +237,8 @@ body,
 
 footer{
   margin-top: auto;
+  color: white;
+  background-color: black;
 }
 
 //header
@@ -273,6 +281,7 @@ nav{
   }
 }
 
+
 .top-post-items{
   h1{
     text-shadow: 0px 0px 2px #fff, 4px 4px 2px rgba(0,0,0,0.3);
@@ -303,6 +312,17 @@ nav{
     padding-top: 10px;
     line-height: 200%;
   }
+}
+
+.about_main_section{
+  background-image: image-url("StockSnap_FYRJ3CSO45.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.about_main_section_cover{
+  background-color: rgba(0,0,0,0.1);
 }
 
 .how_to_section_title{
@@ -358,12 +378,21 @@ nav{
   text-align: center;
 }
 
-#user_info_posts, #user_info_favorites{
-  text-align: center;
+#user_info_favorites{
+  h4{
+    text-align: center;
+  }
+}
+
+#user_info_posts{
+  h1{
+    text-align: center;
+  }
 }
 
 .user_show_tab_empty_message{
   padding-top: 10%;
+  text-align: center
 }
 
 .user_post_area_index{
@@ -375,6 +404,10 @@ nav{
 
 .post_show_top_contents{
   margin: 3% 0;
+}
+
+.tab_contents{
+  margin-bottom: 3%;
 }
 
 .post_show_image{
@@ -416,9 +449,39 @@ nav{
   display: inline-block;
 }
 
+//users_editページ
 
+.user_edit_section{
+  margin-top: 3%;
+  margin-bottom: 3%;
+  h1{
+    padding-bottom: 3%;
+  }
+}
 
+.user_icon_edit{
+  label{
+    display: block;
+    padding-top: 5%;
+  }
+  .btn{
+    margin-top: 20%;
+  }
+}
 
+.user_text_form_edit_section{
+  margin-top: 3%;
+  table{
+    width: 100%;
+  }
+  textarea{
+    width: 100%;
+  }
+}
+
+.user_edit_form_submit{
+  float: right;
+}
 
 
 
