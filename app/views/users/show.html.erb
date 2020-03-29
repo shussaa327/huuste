@@ -36,21 +36,7 @@
       </div>
 
       <div id= "user_info_favorites" class= "tab tab4">
-        <h4>このユーザーのお気に入り</h4>
-        <% if @favorites.blank? %>
-          <p class= "user_show_tab_empty_message">まだお気に入りが登録されていません</p>
-        <% else %>
-          <div class= "favorites_index">
-            <% @favorites.each do |favorite| %>
-              <div class= "favorite_item post_item">
-                <%= link_to post_path(favorite.post) do %>
-                  <%= attachment_image_tag favorite.post, :image, size: "300x300", format: "jpeg", class: "mt-2" %>
-                <% end %>
-                <p><%= favorite.post.shop.area %> 店舗：<%= favorite.post.shop.name %></p>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
+        <%= render "favorites/index", favorites: @favorites %>
       </div>
     </div>
 
