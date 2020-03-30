@@ -2,7 +2,7 @@ class PostCommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @post_page_comments = @post.post_comments.page(params[:post_comments_pagena]).reverse_order
+    @post_page_comments = @post.post_comments.page(params[:post_comments_pagina]).reverse_order
     comment = current_user.post_comments.new(post_comment_params)
     comment.post_id = post.id
     comment.save
@@ -11,7 +11,7 @@ class PostCommentsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:post_id])
-    @post_page_comments = @post.post_comments.page(params[:post_comments_pagena]).reverse_order
+    @post_page_comments = @post.post_comments.page(params[:post_comments_pagina]).reverse_order
     @post_comment = PostComment.new
     post = Post.find(params[:post_id])
     comment = PostComment.find_by(post_id: post.id, id: params[:id])
