@@ -10,7 +10,7 @@
           <p><%= post.shop.area %>　　<%= post.shop.name %></p>
         </div>
       <% end %>
-      <%= paginate posts, param_name: "posts_pagina", class: "paginate" %>
+      <%= paginate posts, param_name: "posts_pagina", class: "paginate", remote: true %>
     <% else %>
       <h4>まずは気になる人をフォローしてみましょう！</h4>
     <% end %>

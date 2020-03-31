@@ -13,7 +13,7 @@
           </tr>
         <% end %>
       <% end %>
-      <%= paginate users, param_name: "users_pagina", class: "paginate" %>
+      <%= paginate users, param_name: "users_pagina", class: "paginate", remote: true %>
     </tbody>
   </table>
 </div>

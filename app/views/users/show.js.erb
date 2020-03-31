@@ -1,3 +1,4 @@
 $("#user_following").html("<%= j(render 'relationships/following', following_users: @following_users) %>");
 $("#user_followed").html("<%= j(render 'relationships/follower', follower_users: @follower_users) %>");
 $("#user_info_favorites").html("<%= j(render 'favorites/index', favorites: @favorites) %>");
+$("#user_show_posts_index_section").html("<%= j(render 'posts/index', posts: @user_posts) %>");

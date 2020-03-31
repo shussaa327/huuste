@@ -13,7 +13,9 @@
       <div class="sidebar col-2">
         <p>地域一覧</p>
         <p>人気のユーザー</p>
-        <%= render "users/index", users: @users %>
+        <div class= "users_index_section">
+          <%= render "users/index", users: @users %>
+        </div>
         <p>まだお店の情報が登録されていない場合はこちらから↓</p>
         <%= link_to "新しくお店を登録する", new_shop_path %>
       </div>
