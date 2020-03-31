@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
-    posts = Post.all.order(created_at: :desc)
+    posts = Post.page(params[:page]).order(created_at: :desc)
   end
 
   def new
@@ -36,8 +36,11 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @post_page_comments = @post.post_comments.page(params[:post_comments_pagina]).reverse_order
     @post_comment = PostComment.new
     @user = @post.user
+    @following_users = @user.search_following_user(@user).page(params[:following_pagina]).reverse_order
+    @follower_users = @user.search_follower_user(@user).page(params[:follower_pagina]).reverse_order
   end
 
   def destroy

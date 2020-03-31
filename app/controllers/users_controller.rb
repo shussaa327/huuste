@@ -2,14 +2,12 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :following, :follower]
   before_action :ensure_correct_user, only: [:edit,:update,:destroy]
 
-  def index
-    users = User.all
-  end
-
   def show
     @user = User.find(params[:id])
-    @user_posts = @user.posts.order(created_at: :desc)
-    @favorites = @user.favorites.all.order(created_at: :desc)
+    @user_posts = @user.posts.page(params[:posts_pagina]).order(created_at: :desc)
+    @favorites = @user.favorites.page(params[:favorites_pagina]).order(created_at: :desc)
+    @following_users = @user.search_following_user(@user).page(params[:following_pagina]).reverse_order
+    @follower_users = @user.search_follower_user(@user).page(params[:follower_pagina]).reverse_order
   end
 
   def edit

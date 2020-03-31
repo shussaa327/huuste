@@ -1,25 +1,41 @@
-<% if post.errors.any? %>
-  <div class= "error_explanation">
-    <p><%= post.errors.count %>件の入力の誤りがあります</p>
-    <div class= "error_messages">
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+<div class= "post_form_content">
+  <% if post.errors.any? %>
+    <div class= "error_explanation">
+      <p><%= post.errors.count %>件の入力の誤りがあります</p>
+      <div class= "error_messages">
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </div>
     </div>
-  </div>
-<% end %>
-<%= form_with(model: post) do |f| %>
-  <h4>コメント</h4>
-  <%= f.text_area :comment, placeholder: "コメントを入力(200文字以内)" %>
-  <h4>写真</h4>
-  <%= f.attachment_field :image, direct: true %>
-  <div id= "post_image_preview">
-    <% if post.image.present? %>
-      <%= attachment_image_tag post, :image, size: "300x300", format: "jpeg" %>
-    <% end %>
-  </div>
-  <h4>評価</h4>
-  <%= f.number_field :rating, max:5, min: 1 %>
-  <%= f.hidden_field :shop_id, :value => @post.shop_id %>
-  <%= f.submit "投稿する" %>
-<% end %>
+  <% end %>
+
+  <%= form_with(model: post) do |f| %>
+    <div class= "row post_form_section">
+      <div class= "col-4 post_form_image_section">
+        <div id= "post_image_preview">
+          <% if post.image.present? %>
+            <%= attachment_image_tag post, :image, size: "300x300", format: "jpeg" %>
+          <% end %>
+        </div>
+        <label>写真</label>
+        <%= f.attachment_field :image, direct: true %>
+      </div>
+
+      <div class= "col-8 post_text_form_section_items">
+        <table class= "table table-bordered">
+          <tr>
+            <th class="table-active">コメント</th>
+            <td><%= f.text_area :comment, placeholder: "コメントを入力(200文字以内)",rows: "7" %></td>
+          </tr>
+          <tr>
+            <th class="table-active">評価</th>
+            <td><%= f.select :rating,[1,2,3,4,5] %></td>
+          </tr>
+        </table>
+        <%= f.hidden_field :shop_id, :value => @post.shop_id %>
+        <%= f.submit "投稿する",class: "btn btn-info post_form_submit" %>
+      </div>
+    </div>
+  <% end %>
+</div>

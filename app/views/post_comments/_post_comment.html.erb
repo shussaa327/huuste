@@ -1,14 +1,14 @@
 <div class= "row">
   <div class= "col-9">
     <p><%= post.post_comments.count %>件のコメント</p>
-    <table class= "table post_comment_table">
+    <table class= "table table-dark post_comment_table">
       <tr>
         <th>user</th>
         <th>comment</th>
         <th></th>
       </tr>
-      <% post.post_comments.each do |post_comment| %>
-        <tr class = "post_comments">
+      <% post_page_comments.each do |post_comment| %>
+        <tr class = "post_comments_content">
           <td class= "post_comment_user">
             <%= link_to user_path(post_comment.user) do %>
               <%= attachment_image_tag post_comment.user, :user_image, size: "40x40", format: "jpeg", fallback: "default-icon-img.jpeg",class: "rounded-circle" %>
@@ -23,13 +23,14 @@
           <% end %>
         </tr>
       <% end %>
+      <%= paginate post_page_comments, param_name: "post_comments_pagina", class: "paginate", remote: true %>
     </table>
   </div>
 
   <div class= "col-3 form-group post_comment_form">
     <% if user_signed_in? %>
       <%= form_for [post, post_comment], remote: true do |f| %>
-        <%= f.text_area :comment, placeholder: "コメントを入力(150文字以内)", class: "form-control", rows: "4" %>
+        <%= f.text_area :comment, placeholder: "コメントを入力(100文字以内)", class: "form-control", rows: "6" %>
         <%= f.submit "送信", class: "post_comment_form_submit_btn" %>
       <% end %>
     <% end %>

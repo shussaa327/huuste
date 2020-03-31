@@ -1,0 +1,3 @@
+$("#user_following").html("<%= j(render 'relationships/following', following_users: @following_users) %>");
+$("#user_followed").html("<%= j(render 'relationships/follower', follower_users: @follower_users) %>");
+$("#post_comments").html("<%= j(render 'post_comments/post_comment',post: @post, post_page_comments: @post_page_comments, post_comment: @post_comment) %>");
