@@ -1,5 +1,5 @@
 <div class= "container">
-  <div class= "row user_show_top_contents">
+  <div class= "row contents user_show_top_contents">
     <div class= "col-10">
       <%= render "users/user_top_info", user: @user %>
     </div>
@@ -27,8 +27,8 @@
       </div>
 
       <div id= "user_info_posts" class= "tab tab3">
+        <h1>snap shots</h1>
         <% if @user_posts.count < 1 %>
-          <h1>snap shots</h1>
           <p class= "user_show_tab_empty_message">まだ投稿がありません</p>
         <% else %>
           <div id= "user_show_posts_index_section">

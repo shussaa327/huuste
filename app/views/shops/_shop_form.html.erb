@@ -1,0 +1,54 @@
+<div class= "shop_info_form">
+  <% if @shop.errors.any? %>
+    <div class= "error_explanation">
+      <p><%= @shop.errors.count %>件の入力の誤りがあります</p>
+      <div class= "error_messages">
+        <% @shop.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <%= form_for(@shop) do |f| %>
+    <table class= "table table-bordered">
+      <tr>
+        <th class="table-active">名前</th>
+        <td><%= f.text_field :name, placeholder: "店舗名", class: "shop_name_form" %></td>
+      </tr>
+      <tr>
+        <th class="table-active">地域</th>
+        <td><%= f.text_field :area, placeholder: "地域" %></td>
+      </tr>
+      <tr>
+        <th class="table-active">郵便番号</th>
+        <td><%= f.text_field :order_postal_code, placeholder: "郵便番号" %></td>
+      </tr>
+      <tr>
+        <th class="table-active">住所</th>
+        <td><%= f.text_field :address, placeholder: "住所", class: "shop_address_form" %></td>
+      </tr>
+      <tr>
+        <th class="table-active">電話番号</th>
+        <td><%= f.text_field :phone_number, placeholder: "電話番号", class: "shop_phone_number_form" %></td>
+      </tr>
+      <tr>
+        <th class="table-active">営業時間</th>
+        <td>
+          <%= f.time_field :open_time, placeholder: "営業開始時間" %>
+          ~
+          <%= f.time_field :close_time, placeholder: "営業終了時間" %>
+        </td>
+      </tr>
+      <tr>
+        <th class="table-active">平均予算</th>
+        <td>
+          <%= f.number_field :min_average_price, min:1 %>
+          ~
+          <%= f.number_field :max_average_price, min:1 %>
+        </td>
+      </tr>
+    </table>
+    <%= f.submit "登録する", class: "shop_form_submit" %>
+  <% end %>
+</div>

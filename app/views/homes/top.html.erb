@@ -7,17 +7,22 @@
 <div class= "top_main_content">
   <div class="container">
     <div class="row">
-      <div class="top-post-items col-10">
-        <%= render "posts/index", posts: @posts %>
+      <div class= "top-post-items col-10">
+        <h1>snap shots</h1>
+        <% if @posts.count > 0 %>
+          <div class="top_posts_section">
+            <%= render "posts/index", posts: @posts %>
+          </div>
+        <% else %>
+          <h4>まずは気になる人をフォローしてみましょう！</h4>
+        <% end %>
       </div>
       <div class="sidebar col-2">
         <p>地域一覧</p>
-        <p>人気のユーザー</p>
+        <p>ユーザー</p>
         <div class= "users_index_section">
           <%= render "users/index", users: @users %>
         </div>
-        <p>まだお店の情報が登録されていない場合はこちらから↓</p>
-        <%= link_to "新しくお店を登録する", new_shop_path %>
       </div>
     </div>
   </div>

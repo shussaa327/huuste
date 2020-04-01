@@ -1,4 +1,4 @@
-<div class = "container post_edit_content">
+<div class = "container contents post_edit_content">
   <h1>投稿編集</h1>
   <%= render "posts/post_form", post: @post %>
   <%= link_to "投稿を削除する", post_path(@post), method: :delete, "data-confirm" => "本当に削除してよろしいですか？",class: "btn btn-danger" %>

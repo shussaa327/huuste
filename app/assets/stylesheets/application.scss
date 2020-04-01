@@ -38,6 +38,17 @@ a:hover{
   clear: both;
 }
 
+table{
+  width: 100%;
+}
+
+.contents{
+  margin: 3% auto;
+  h1{
+    padding-bottom: 3%;
+  }
+}
+
 //tab_menu レイアウト
 
 .tab_menu_contents{
@@ -73,28 +84,7 @@ a:hover{
 //レンダリング　レイアウト　ここから
 
 
-//posts indexレイアウト
-
-.post_index{
-  margin: 0 auto;
-  h1{
-    text-align: center;
-  }
-  h4{
-    text-align: center;
-    padding-top: 15%;
-  }
-}
-
-.post_item{
-  display: inline-block;
-  p{
-    text-align: left;
-  }
-}
-
-
-//_user_top_infoレイアウト
+//user_top_infoレイアウト
 
 .user_top_info_items{
   margin-top: 3%;
@@ -140,7 +130,7 @@ a:hover{
 }
 
 
-//_follow_people_numレイアウト
+//follow_people_numレイアウト
 
 .follow_count_items{
   a{
@@ -150,26 +140,7 @@ a:hover{
 }
 
 
-//shop_recommendationsレイアウト
-
-.shop-recommendations{
-  margin-left: 5%;
-}
-
-.shop_no_recommendation_message{
-  padding-top: 20%;
-}
-
-.shop_recommendation{
-  a{
-    display: block;
-    padding-top: 5%;
-    border-bottom: 1px solid black;
-  }
-}
-
-
-//_following,_follower 共通レイアウト
+//following,_follower 共通レイアウト
 
 .follow_user_index_table{
   padding-left: 40%;
@@ -179,6 +150,65 @@ a:hover{
 .follow_people{
   a:hover{
     text-decoration: none;
+  }
+}
+
+
+//favoriteレイアウト
+
+.heart_favorited{
+  color: red;
+}
+
+
+//favorites_indexレイアウト
+
+.favorites_index_content{
+  text-align: center;
+  p{
+    text-align: left;
+  }
+}
+
+
+//posts_indexレイアウト
+
+.post_index{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.post_item{
+  display: inline-block;
+  p{
+    text-align: left;
+  }
+}
+
+
+//post_formレイアウト
+
+.post_form_content{
+  margin-top: 3%;
+}
+
+.post_form_image_section{
+  label{
+    padding-top: 5%;
+    display: block;
+  }
+}
+
+.post_text_form_section_items{
+  margin-top: 3%;
+  textarea{
+    width: 100%;
+  }
+  #post_rating{
+    width: 30%;
+  }
+  .post_form_submit{
+    float:right;
   }
 }
 
@@ -216,39 +246,52 @@ a:hover{
 }
 
 
-//favoriteレイアウト
+//shop_showレイアウト
 
-.heart_favorited{
-  color: red;
+.shop_show_post_new_link{
+  float: right;
+  font-size: 120%;
+}
+
+#shop_recommend_button{
+  margin-bottom: 1%;
 }
 
 
-//post_formレイアウト
+//shop_formレイアウト
 
-.post_form_content{
-  margin-top: 3%;
+.shop_name_form{
+  width: 40%;
 }
 
-.post_form_image_section{
-  label{
-    padding-top: 5%;
+.shop_address_form{
+  width: 80%;
+}
+
+.shop_phone_number_form{
+  width: 30%;
+}
+
+.shop_form_submit{
+  float: right;
+}
+
+
+//shop_recommendationsレイアウト
+
+.shop-recommendations{
+  margin-left: 5%;
+}
+
+.shop_no_recommendation_message{
+  padding-top: 20%;
+}
+
+.shop_recommendation{
+  a{
     display: block;
-  }
-}
-
-.post_text_form_section_items{
-  margin-top: 3%;
-  table{
-    width: 100%;
-  }
-  textarea{
-    width: 100%;
-  }
-  #post_rating{
-    width: 30%;
-  }
-  .post_form_submit{
-    float:right;
+    padding-top: 5%;
+    border-bottom: 1px solid black;
   }
 }
 
@@ -317,9 +360,17 @@ header{
 .top-post-items{
   h1{
     text-shadow: 0px 0px 2px #fff, 4px 4px 2px rgba(0,0,0,0.3);
+    text-align: center;
+  }
+  h4{
+    text-align: center;
+    padding-top: 15%;
   }
 }
 
+.users_table{
+  margin: 10% auto;
+}
 
 
 //homes_aboutページ
@@ -393,18 +444,8 @@ header{
 
 //users_showページ
 
-.user_show_top_contents{
-  margin: 3% 0;
-}
-
 .user_show_shop_recommendations{
   text-align: center;
-}
-
-#user_info_favorites{
-  h4{
-    text-align: center;
-  }
 }
 
 #user_info_posts{
@@ -445,9 +486,6 @@ header{
 
 .user_text_form_edit_section{
   margin-top: 3%;
-  table{
-    width: 100%;
-  }
   textarea{
     width: 100%;
   }
@@ -511,21 +549,26 @@ header{
 //post_editページ
 
 .post_edit_content{
-  margin: 3% auto;
-}
-
-.post_edit_content{
   .btn-danger{
     margin-top: 5%;
   }
 }
 
 
-//posts_newページ
+//shop_showページ
 
-.post_new_content{
-  margin: 3% auto;
+.shop_show_posts_section{
+  h1{
+    text-shadow: 0px 0px 2px #fff, 4px 4px 2px rgba(0,0,0,0.3);
+    text-align: center;
+  }
 }
+
+
+
+
+
+
 
 
 
