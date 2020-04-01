@@ -1,9 +1,9 @@
 <div class = "user-index">
-  <table>
+  <table class= "table-dark users_table">
     <% users.each do |user| %>
       <% unless user == current_user %>
         <tr>
-          <td height= "50">
+          <td height= "50" align= "center">
             <%= link_to user_path(user) do %>
               <%= attachment_image_tag user, :user_image, size: "40x40", format: "jpeg", fallback: "default-icon-img.jpeg",class: "rounded-circle" %>
             <% end %>
@@ -14,4 +14,5 @@
     <% end %>
     <%= paginate users, param_name: "users_pagina", class: "paginate", remote: true %>
   </table>
+  <p>ユーザーをフォローして繋がりましょう！</p>
 </div>

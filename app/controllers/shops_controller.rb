@@ -19,6 +19,7 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
+    @shop_posts = @shop.posts.page(params[:posts_pagina]).order(created_at: :desc)
   end
 
   def edit

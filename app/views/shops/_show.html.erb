@@ -1,83 +1,87 @@
-<h1>店舗情報</h1>
-<table class= "table table-bordered">
-  <tr>
-    <th>店舗名</th>
-    <td><%= shop.name %></td>
-  </tr>
-  <tr>
-    <th>地域</th>
-    <td><%= shop.area %></td>
-  </tr>
-   <tr>
-    <th>郵便番号</th>
-    <td><%= shop.order_postal_code %></td>
-  </tr>
-   <tr>
-    <th>住所</th>
-    <td>
-      <%= shop.address %>
-      <script type="text/javascript">
-        function initMap() {
-
-          var test ={lat: <%= shop.latitude %>, lng: <%= shop.longitude %>};
-          var map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 15,
-              center: test
-          });
-          var transitLayer = new google.maps.TransitLayer();
-          transitLayer.setMap(map);
-
-          var contentString = '住所：<%= shop.address %>';
-          var infowindow = new google.maps.InfoWindow({
-              content: contentString
-          });
-
-          var marker = new google.maps.Marker({
-              position:test,
-              map: map,
-              title: contentString
-          });
-
-          marker.addListener('click', function() {
-              infowindow.open(map, marker);
-          });
-        }
-      </script>
-      <script async defer
-              src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
-      </script>
-      <style type="text/css">
-        #map { height: 200px;
-               width: 70%;}
-      </style>
-      <div id="map"></div>
-    </td>
-  </tr>
-  <tr>
-    <th>電話番号</th>
-    <td><%= shop.phone_number %></td>
-  </tr>
-  <tr>
-    <th>営業時間</th>
-    <td>
-      <%= shop.open_time %>
-      ~
-      <%= shop.close_time %>
-    </td>
-  </tr>
-  <tr>
-    <th>平均予算</th>
-    <td>
-      <%= shop.min_average_price %>
-      ~
-      <%= shop.max_average_price %>円
-    </td>
-  </tr>
-</table>
-<p><%= link_to "店舗情報を編集する", edit_shop_path(shop) %></p>
-<% if user_signed_in? %>
-  <div id= "shop_recommend_button">
-    <%= render "shop_recommendations/shop_recommendation", shop: shop %>
+<div class= "contents shop_show_content">
+  <h1>店舗情報</h1>
+  <div class= "shop_show_top_items">
+    <% if user_signed_in? %>
+      <%= link_to "このお店について投稿する", new_post_path(:shop_id => shop.id), class: "shop_show_post_new_link" %>
+      <div id= "shop_recommend_button">
+        <%= render "shop_recommendations/shop_recommendation", shop: shop %>
+      </div>
+    <% end %>
   </div>
-  <%= link_to "お店について投稿する", new_post_path(:shop_id => shop.id) %>
-<% end %>
+  <table class= "table table-bordered">
+    <tr>
+      <th>店舗名</th>
+      <td><%= shop.name %></td>
+    </tr>
+    <tr>
+      <th>地域</th>
+      <td><%= shop.area %></td>
+    </tr>
+     <tr>
+      <th>郵便番号</th>
+      <td><%= shop.order_postal_code %></td>
+    </tr>
+     <tr>
+      <th>住所</th>
+      <td>
+        <%= shop.address %>
+        <script type="text/javascript">
+          function initMap() {
+
+            var test ={lat: <%= shop.latitude %>, lng: <%= shop.longitude %>};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: test
+            });
+            var transitLayer = new google.maps.TransitLayer();
+            transitLayer.setMap(map);
+
+            var contentString = '住所：<%= shop.address %>';
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+
+            var marker = new google.maps.Marker({
+                position:test,
+                map: map,
+                title: contentString
+            });
+
+            marker.addListener('click', function() {
+                infowindow.open(map, marker);
+            });
+          }
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+        </script>
+        <style type="text/css">
+          #map { height: 200px;
+                 width: 70%;}
+        </style>
+        <div id="map"></div>
+      </td>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <td><%= shop.phone_number %></td>
+    </tr>
+    <tr>
+      <th>営業時間</th>
+      <td>
+        <%= shop.open_time %>
+        ~
+        <%= shop.close_time %>
+      </td>
+    </tr>
+    <tr>
+      <th>平均予算</th>
+      <td>
+        <%= shop.min_average_price %>
+        ~
+        <%= shop.max_average_price %>円
+      </td>
+    </tr>
+  </table>
+  <p><%= link_to "店舗情報を編集する", edit_shop_path(shop) %></p>
+</div>

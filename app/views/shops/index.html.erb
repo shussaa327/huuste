@@ -1,10 +1,18 @@
-<div class= "container">
+<div class= "container contents shop_index_content">
   <h1>検索されたお店</h1>
-  <% @shops.each do |shop| %>
-    <div class= "row">
-      <%= link_to shop.name, shop_path(shop) %>
-      <%= shop.area %>
-    </div>
-  <% end %>
+  <table class= "table table-bordered">
+    <tr class="table-active">
+      <th>地域</th>
+      <th>店舗名</th>
+    </tr>
+    <% @shops.each do |shop| %>
+      <tr>
+      <td><%= shop.area %></td>
+      <td><%= link_to shop.name, shop_path(shop) %></td>
+      </tr>
+    <% end %>
+  </table>
   <%= paginate @shops, class: "paginate" %>
+  <p>まだお店の情報が登録されていない場合はこちらから↓</p>
+  <%= link_to "新しくお店を登録する", new_shop_path %>
 </div>
