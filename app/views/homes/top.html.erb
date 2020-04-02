@@ -19,6 +19,7 @@
       </div>
       <div class="sidebar col-2">
         <p>地域一覧</p>
+        <%= render "areas/index", areas: @areas %>
         <p>ユーザー</p>
         <div class= "users_index_section">
           <%= render "users/index", users: @users %>

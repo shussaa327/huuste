@@ -296,6 +296,14 @@ table{
 }
 
 
+//area_indexレイアウト
+
+.area_item{
+  display: inline-block;
+  padding: 2%;
+}
+
+
 //レンダリング　レイアウト　ここまで
 
 
@@ -318,7 +326,7 @@ footer{
 
 header{
   nav{
-    background-color: darkorange;
+    background-color: #f39800;
     a{
       color: white;
       font-weight: bold;
@@ -373,7 +381,7 @@ header{
 }
 
 
-//homes_aboutページ
+//home_aboutページ
 
 .concept-section{
   height: 300px;
@@ -439,10 +447,7 @@ header{
 }
 
 
-//users,posts_showページ　共通部分
-
-
-//users_showページ
+//user_showページ
 
 .user_show_shop_recommendations{
   text-align: center;
@@ -464,7 +469,7 @@ header{
 }
 
 
-//users_editページ
+//user_editページ
 
 .user_edit_section{
   margin-top: 3%;
@@ -496,7 +501,7 @@ header{
 }
 
 
-//posts_showページ
+//post_showページ
 
 .post_show_top_contents{
   margin: 3% 0;

@@ -12,4 +12,5 @@ resources :posts do
   resources :post_comments, only: [:create, :destroy]
 end
 resources :users
+resources :areas, only: [:show]
 end

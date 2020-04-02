@@ -3,9 +3,10 @@ class Shop < ApplicationRecord
   has_many :post_images
   has_many :shop_recommendations, dependent: :destroy
   belongs_to :user, optional: true
+  belongs_to :area
   validates :name, presence: true
   validates :address, presence: true
-  validates :area, presence: true
+  validates :area_id, presence: true
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
