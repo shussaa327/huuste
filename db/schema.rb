@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2020_04_02_082535) do
     t.integer "rating"
     t.integer "user_id"
     t.integer "shop_id"
-    t.integer "post_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "area_id"

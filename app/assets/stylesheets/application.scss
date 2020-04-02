@@ -376,6 +376,12 @@ header{
   }
 }
 
+.users_index_section{
+  h5{
+    padding-top: 10%;
+  }
+}
+
 .users_table{
   margin: 10% auto;
 }
@@ -443,6 +449,22 @@ header{
 .concept_section_signin_link{
   p{
     font-size: 150%;
+  }
+}
+
+
+//area_showページ
+
+.area_show_content{
+  text-align: center;
+  h4{
+    padding-top: 15%;
+  }
+}
+
+.area_show_posts_index{
+  p{
+    text-align: left;
   }
 }
 
@@ -574,12 +596,3 @@ header{
     text-align: center;
   }
 }
-
-
-
-
-
-
-
-
-
