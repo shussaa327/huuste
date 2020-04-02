@@ -18,7 +18,7 @@
       </tr>
       <tr>
         <th class="table-active">地域</th>
-        <td><%= f.text_field :area, placeholder: "地域" %></td>
+        <td><%= f.select :area_id, Area.all.map{|o| [o.area_name, o.id]} %></td>
       </tr>
       <tr>
         <th class="table-active">郵便番号</th>

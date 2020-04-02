@@ -5,7 +5,7 @@
         <%= link_to post_path(post) do %>
           <%= attachment_image_tag post, :image, size: "300x300", format: "jpeg", class: "mt-2" %>
         <% end %>
-        <p><%= post.shop.area %>　　<%= post.shop.name %></p>
+        <p><%= post.shop.area.area_name %>　　<%= post.shop.name %></p>
       </div>
     <% end %>
     <%= paginate posts, param_name: "posts_pagina", class: "paginate", remote: true %>

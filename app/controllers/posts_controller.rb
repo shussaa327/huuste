@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @post.shop_id = params[:shop_id]
+    @post.area_id = params[:area_id]
   end
 
   def create
@@ -52,7 +53,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:comment, :image, :rating, :shop_id)
+    params.require(:post).permit(:comment, :image, :rating, :shop_id, :area_id)
   end
 
   def ensure_correct_user

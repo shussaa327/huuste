@@ -2,7 +2,7 @@
   <h1>店舗情報</h1>
   <div class= "shop_show_top_items">
     <% if user_signed_in? %>
-      <%= link_to "このお店について投稿する", new_post_path(:shop_id => shop.id), class: "shop_show_post_new_link" %>
+      <%= link_to "このお店について投稿する", new_post_path(:shop_id => shop.id, :area_id => shop.area_id), class: "shop_show_post_new_link" %>
       <div id= "shop_recommend_button">
         <%= render "shop_recommendations/shop_recommendation", shop: shop %>
       </div>
@@ -15,7 +15,7 @@
     </tr>
     <tr>
       <th>地域</th>
-      <td><%= shop.area %></td>
+      <td><%= shop.area.area_name %></td>
     </tr>
      <tr>
       <th>郵便番号</th>

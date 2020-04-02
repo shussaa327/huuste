@@ -44,8 +44,12 @@
       </div>
 
       <div class= "col-2 user_post_area_index">
-        <h5>ユーザー投稿<br>
-            地域一覧</h5>
+        <h5>投稿された地域</h5>
+        <%  @user_posts.each do |post| %>
+          <div class= "users_show_area_item">
+            <p><%= post.shop.area.area_name %>(<%=  %>)</p>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

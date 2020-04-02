@@ -39,7 +39,7 @@ class ShopsController < ApplicationController
   private
 
   def shop_params
-    params.require(:shop).permit(:name,:area,:address,:order_postal_code,
+    params.require(:shop).permit(:name,:area_id,:address,:order_postal_code,
       :phone_number,:open_time,:close_time,:min_average_price,:max_average_price)
   end
 end
