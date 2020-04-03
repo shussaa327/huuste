@@ -3,7 +3,7 @@
     <% users.each do |user| %>
       <% unless user == current_user %>
         <tr>
-          <td height= "50" align= "center">
+          <td height= "50" class= "pl-1">
             <%= link_to user_path(user) do %>
               <%= attachment_image_tag user, :user_image, size: "40x40", format: "jpeg", fallback: "default-icon-img.jpeg",class: "rounded-circle" %>
             <% end %>

@@ -5,7 +5,7 @@
         <%= render "users/user_top_info", user: @user %>
       </div>
 
-      <div class= "col-2 user_show_shop_recommendations">
+      <div class= "col-2 user_show_shop_recommendations shop_recommendations_section">
         <%= render "shop_recommendations/index", shop_recommendations: @user.shop_recommendations %>
       </div>
     </div>
@@ -30,7 +30,7 @@
         <div id= "user_info_posts" class= "tab tab3">
           <h1>snap shots</h1>
           <% if @user_posts.count < 1 %>
-            <p class= "user_show_tab_empty_message">まだ投稿がありません</p>
+            <h6 class= "user_show_tab_empty_message">まだ投稿がありません</h6>
           <% else %>
             <div id= "user_show_posts_index_section">
               <%= render "posts/index", posts: @user_posts %>
@@ -44,11 +44,15 @@
       </div>
 
       <div class= "col-2 user_post_area_index">
-        <h5>投稿された地域</h5>
-        <%  @user_posts.each do |post| %>
-          <div class= "users_show_area_item">
-            <p><%= post.shop.area.area_name %>(<%=  %>)</p>
-          </div>
+        <h5>投稿した地域一覧</h5>
+        <% if @user_posts.count < 1 %>
+          <h6>まだ投稿がありません</h6>
+        <% else %>
+          <%  user_post_areas_count(@user).each do |area_name, area_count| %>
+            <div class= "users_show_area_item">
+              <p><%= area_name %>(<%= area_count %>)</p>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>

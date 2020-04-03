@@ -165,6 +165,9 @@ table{
 
 .favorites_index_content{
   text-align: center;
+  h6{
+    padding-top: 10%;
+  }
   p{
     text-align: left;
   }
@@ -279,8 +282,11 @@ table{
 
 //shop_recommendationsレイアウト
 
-.shop-recommendations{
+.shop-recommendations_content{
   margin-left: 5%;
+  h5{
+    text-align: center;
+  }
 }
 
 .shop_no_recommendation_message{
@@ -457,6 +463,9 @@ header{
 
 .area_show_content{
   text-align: center;
+  h1{
+    text-shadow: 0px 0px 2px #fff, 4px 4px 2px rgba(0,0,0,0.3);
+  }
   h4{
     padding-top: 15%;
   }
@@ -488,6 +497,9 @@ header{
 
 .user_post_area_index{
   text-align: center;
+  h6{
+    padding-top: 20%;
+  }
 }
 
 .users_show_area_item{

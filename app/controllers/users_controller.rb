@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @favorites = @user.favorites.page(params[:favorites_pagina]).order(created_at: :desc)
     @following_users = @user.search_following_user(@user).page(params[:following_pagina]).reverse_order
     @follower_users = @user.search_follower_user(@user).page(params[:follower_pagina]).reverse_order
+
   end
 
   def edit
