@@ -2,7 +2,7 @@ class ShopsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def index
-    @shops = Shop.search(params[:search]).page(params[:page]).reverse_order
+    @shops = Shop.search(params[:search_area],params[:search_shop]).page(params[:page]).reverse_order
   end
 
   def new
