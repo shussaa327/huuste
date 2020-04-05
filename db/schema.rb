@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_05_142827) do
+ActiveRecord::Schema.define(version: 2020_04_02_082535) do
+
+  create_table "areas", force: :cascade do |t|
+    t.string "area_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
@@ -27,24 +33,15 @@ ActiveRecord::Schema.define(version: 2020_03_05_142827) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "post_images", force: :cascade do |t|
-    t.string "post_image_id"
-    t.integer "user_id"
-    t.integer "shop_id"
-    t.integer "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.text "comment"
     t.string "image_id"
     t.integer "rating"
     t.integer "user_id"
     t.integer "shop_id"
-    t.integer "post_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "area_id"
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -68,7 +65,6 @@ ActiveRecord::Schema.define(version: 2020_03_05_142827) do
     t.string "name"
     t.string "address"
     t.string "order_postal_code"
-    t.string "area"
     t.string "phone_number"
     t.string "open_time"
     t.string "close_time"
@@ -78,6 +74,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_142827) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.integer "area_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -3,7 +3,7 @@
     <div class= "col-10">
       <%= render "users/user_top_info", user: @user %>
     </div>
-    <div class= "col-2">
+    <div class= "col-2 shop_recommendations_section">
       <%= render "shop_recommendations/index", shop_recommendations: @user.shop_recommendations %>
     </div>
   </div>
@@ -12,7 +12,7 @@
     <ul class= "tab_menu tab_menu_items">
       <li>|<a href= "#post_user_show" class= "active">投稿</a></li>
       <li>|<a href= "#post_shop_show">店舗情報</a>|</li>
-      <li id= "post_comment_tab"><%= render "post_comments/post_comment_tab", post: @post %>|</li>
+      <li id= "post_comment_tab"><%= render "post_comments/post_comment_tab", post: @post %></li>
     </ul>
   </div>
 
@@ -26,7 +26,7 @@
     </div>
 
     <div id= "post_user_show" class= "row tab tab3">
-      <div class= "col-5 post_show_image"><%= attachment_image_tag @post, :image, size: "300x300", format: "jpeg" %></div>
+      <div class= "col-5 post_show_image"><%= attachment_image_tag @post, :image, size: "300x300", format: "jpeg", class: "rounded" %></div>
       <div class= "col-7">
         <div class= "post_show_shop_name_section">
           <h3>店舗名</h3>

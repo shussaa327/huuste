@@ -1,50 +1,60 @@
-<div class= "container">
-  <div class= "row contents user_show_top_contents">
-    <div class= "col-10">
-      <%= render "users/user_top_info", user: @user %>
-    </div>
-
-    <div class= "col-2 user_show_shop_recommendations">
-      <%= render "shop_recommendations/index", shop_recommendations: @user.shop_recommendations %>
-    </div>
-  </div>
-
-  <div class= "tab_menu_contents">
-    <ul class= "tab_menu tab_menu_items">
-      <li>|<a href= "#user_info_posts" class= "active">投稿一覧</a>|</li>
-      <li><a href= "#user_info_favorites">お気に入り(<%= @user.favorites.count %>)</a>|</li>
-    </ul>
-  </div>
-
-  <div class= "row user_show_bottom_contents">
-    <div class= "tab_contents col-10">
-      <div id= "user_following" class= "tab tab1">
-        <%= render "relationships/following", following_users: @following_users %>
+<div class= "users_show_content">
+  <div class= "container">
+    <div class= "row contents user_show_top_contents">
+      <div class= "col-10">
+        <%= render "users/user_top_info", user: @user %>
       </div>
 
-      <div id= "user_followed" class= "tab tab2">
-        <%= render "relationships/follower", follower_users: @follower_users %>
+      <div class= "col-2 user_show_shop_recommendations shop_recommendations_section">
+        <%= render "shop_recommendations/index", shop_recommendations: @user.shop_recommendations %>
+      </div>
+    </div>
+
+    <div class= "tab_menu_contents">
+      <ul class= "tab_menu tab_menu_items">
+        <li>|<a href= "#user_info_posts" class= "active">投稿一覧</a>|</li>
+        <li><a href= "#user_info_favorites">お気に入り(<%= @user.favorites.count %>)</a>|</li>
+      </ul>
+    </div>
+
+    <div class= "row user_show_bottom_contents">
+      <div class= "tab_contents col-10">
+        <div id= "user_following" class= "tab tab1">
+          <%= render "relationships/following", following_users: @following_users %>
+        </div>
+
+        <div id= "user_followed" class= "tab tab2">
+          <%= render "relationships/follower", follower_users: @follower_users %>
+        </div>
+
+        <div id= "user_info_posts" class= "tab tab3">
+          <h1>snap shots</h1>
+          <% if @user_posts.count < 1 %>
+            <h6 class= "user_show_tab_empty_message">まだ投稿がありません</h6>
+          <% else %>
+            <div id= "user_show_posts_index_section">
+              <%= render "posts/index", posts: @user_posts %>
+            </div>
+          <% end %>
+        </div>
+
+        <div id= "user_info_favorites" class= "tab tab4">
+          <%= render "favorites/index", favorites: @favorites %>
+        </div>
       </div>
 
-      <div id= "user_info_posts" class= "tab tab3">
-        <h1>snap shots</h1>
+      <div class= "col-2 user_post_area_index">
+        <h5>投稿した地域一覧</h5>
         <% if @user_posts.count < 1 %>
-          <p class= "user_show_tab_empty_message">まだ投稿がありません</p>
+          <h6>まだ投稿がありません</h6>
         <% else %>
-          <div id= "user_show_posts_index_section">
-            <%= render "posts/index", posts: @user_posts %>
-          </div>
+          <%  user_post_areas_count(@user).each do |area_name, area_count| %>
+            <div class= "users_show_area_item">
+              <p><%= area_name %>(<%= area_count %>)</p>
+            </div>
+          <% end %>
         <% end %>
       </div>
-
-      <div id= "user_info_favorites" class= "tab tab4">
-        <%= render "favorites/index", favorites: @favorites %>
-      </div>
-    </div>
-
-    <div class= "col-2 user_post_area_index">
-      <h5>ユーザー投稿<br>
-          地域一覧</h5>
     </div>
   </div>
 </div>

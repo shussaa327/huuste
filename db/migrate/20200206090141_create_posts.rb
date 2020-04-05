@@ -6,7 +6,6 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.integer :rating
       t.integer :user_id
       t.integer :shop_id
-      t.integer :post_image_id
 
       t.timestamps
     end

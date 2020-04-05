@@ -2,7 +2,7 @@ class CreateShops < ActiveRecord::Migration[5.2]
   def change
     create_table :shops do |t|
       t.string :name
-      t.string :address
+      t.string :address, unique: true
       t.string :order_postal_code
       t.string :area
       t.string :phone_number

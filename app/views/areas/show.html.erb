@@ -1,0 +1,10 @@
+<div class= "container contents area_show_content">
+  <h1>snap shots　- <%= @area.area_name %> -</h1>
+  <% if @area_posts.count < 1 %>
+    <h4>まだ投稿がありません</h4>
+  <% else %>
+    <div class = "area_show_posts_index">
+      <%= render "posts/index", posts: @area_posts %>
+    </div>
+  <% end %>
+</div>
