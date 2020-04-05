@@ -15,7 +15,7 @@
       <div class= "col-4 post_form_image_section">
         <div id= "post_image_preview">
           <% if post.image.present? %>
-            <%= attachment_image_tag post, :image, size: "300x300", format: "jpeg" %>
+            <%= attachment_image_tag post, :image, size: "300x300", format: "jpeg", class: "rounded" %>
           <% end %>
         </div>
         <label>写真</label>
@@ -23,13 +23,13 @@
       </div>
 
       <div class= "col-8 post_text_form_section_items">
-        <table class= "table table-bordered">
+        <table class= "table table-bordered table-dark">
           <tr>
-            <th class="table-active">コメント</th>
+            <th>コメント</th>
             <td><%= f.text_area :comment, placeholder: "コメントを入力(200文字以内)",rows: "7" %></td>
           </tr>
           <tr>
-            <th class="table-active">評価</th>
+            <th>評価</th>
             <td><%= f.select :rating,[1,2,3,4,5] %></td>
           </tr>
         </table>
