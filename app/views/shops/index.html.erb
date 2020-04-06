@@ -7,7 +7,7 @@
     </tr>
     <% @shops.each do |shop| %>
       <tr>
-      <td><%= shop.area.area_name %></td>
+      <td><%= link_to shop.area.area_name, area_path(shop.area) %></td>
       <td><%= link_to shop.name, shop_path(shop) %></td>
       </tr>
     <% end %>

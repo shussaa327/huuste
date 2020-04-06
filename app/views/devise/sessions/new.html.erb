@@ -4,12 +4,12 @@
       <h2>ログイン</h2>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
+        <div class="field pb-3">
           <%= f.label :email, "メールアドレス" %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
 
-        <div class="field">
+        <div class="field pb-2">
           <%= f.label :password, "パスワード" %><br />
           <%= f.password_field :password, autocomplete: "current-password" %>
         </div>
@@ -21,11 +21,11 @@
           </div>
         <% end %>
 
-        <div class="actions">
-          <%= f.submit "ログイン" %>
+        <div class="actions pt-2 pb-5">
+          <%= f.submit "ログイン", class: "pt-1 pb-1 pl-2 pr-2 btn-primary rounded" %>
         </div>
       <% end %>
-      <p>アカウントをお持ちでない方はこちらから↓</p>
+      <p class= "pb-2">アカウントをお持ちでない方はこちら↓</p>
       <%= render "devise/shared/links" %>
     </div>
   </div>

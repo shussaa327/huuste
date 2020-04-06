@@ -8,7 +8,7 @@
               <%= attachment_image_tag user, :user_image, size: "40x40", format: "jpeg", fallback: "default-icon-img.jpeg",class: "rounded-circle" %>
             <% end %>
           </td>
-          <td align= "left" class= "w-75 pl-2"><%= user.name %></td>
+          <td align= "left" class= "w-75 pl-2"><%= link_to user.name, user_path(user) %></td>
         </tr>
       <% end %>
     <% end %>

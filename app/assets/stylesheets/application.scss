@@ -130,6 +130,19 @@ table{
 }
 
 
+//user_indexレイアウト
+
+.users_table{
+  a{
+    color: white;
+  }
+  a:hover{
+    color: orange;
+    text-decoration: none;
+  }
+}
+
+
 //follow_people_numレイアウト
 
 .follow_count_items{
@@ -148,8 +161,12 @@ table{
 }
 
 .follow_people{
+  a{
+    color: white;
+  }
   a:hover{
     text-decoration: none;
+    color: orange;
   }
 }
 
@@ -371,7 +388,7 @@ header{
 .main-visual{
   height: 300px;
   padding: 0;
-  background-image: image-url("home-top-image.jpg");
+  background-image: image-url("home-top-img.jpg");
   background-size: cover;
   background-position: center;
   h1{
@@ -417,39 +434,52 @@ header{
 
 //home_aboutページ
 
+.about_contents_cover{
+  background-color: rgba(0,0,0,0.1);
+}
+
+.about_contents{
+  background-image: image-url("about-main-back-img.jpg");
+  background-size: cover;
+  background-position: bottom;
+}
+
 .concept-section{
-  height: 300px;
-  background-image: image-url("about-main-img.jpeg");
+  height: 500px;
+  background-image: image-url("about-top-img.jpg");
   background-size: cover;
   background-position: center;
   padding: 0;
 }
 
 .concept_text{
-  background-color: rgba(0,0,0,0.4);
-  height: 300px;
-  h2,p{
-  padding-top: 30px;
+  background-color: rgba(0,0,0,0.3);
+  height: 500px;
+}
+
+.about_top_text_items{
+  background-color: rgba(0,0,0,0.7);
+  height: 350px;
   color: white;
-  margin: 0 auto;
+  font-weight: bold;
+  h1{
+    padding-top: 3%;
   }
   p{
-    padding-top: 10px;
-    line-height: 200%;
+    margin-top: 3%;
+    margin-left: 10%;
+    line-height: 300%;
+    font-size: 120%;
   }
-}
-
-.about_main_section{
-}
-
-.about_main_section_cover{
-
 }
 
 .how_to_section_title{
   h1{
   margin: 5% auto;
-  border-bottom: 3px solid orange;
+  padding: 2% 3%;
+  text-decoration: underline;
+  text-decoration-color: orange;
+  background-color:rgba(255,255,255,0.9);
   }
 }
 
@@ -458,16 +488,35 @@ header{
 }
 
 .how_to_sections_text{
-  h3{
+  background-color:rgba(255,255,255,0.9);
+  h2{
     text-align: center;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     border-bottom: 2px solid orange;
+    padding: 2% 5%;
+    font-weight: bold;
   }
   p{
-    padding-top: 10%;
+    padding-top: 5%;
     padding-bottom: 10%;
     line-height: 200%;
+    font-size: 120%;
+    font-weight: bold;
   }
+}
+
+.how_to_sec_img1{
+  padding-left: 7%;
+}
+
+.how_to_sec_img2{
+  text-align: right;
+  padding-right: 10%;
+  padding-top: 8%;
+}
+
+.how_to_sec2{
+  margin-top: 5%;
 }
 
 .concept_section_signin_link{
