@@ -1,5 +1,5 @@
 class ShopsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @shops = Shop.search(params[:search_area],params[:search_shop]).page(params[:page]).reverse_order
@@ -21,19 +21,6 @@ class ShopsController < ApplicationController
   def show
     @shop = Shop.find(params[:id])
     @shop_posts = @shop.posts.page(params[:posts_pagina]).order(created_at: :desc)
-  end
-
-  def edit
-    @shop = Shop.find(params[:id])
-  end
-
-  def update
-    @shop = Shop.find(params[:id])
-    if @shop.update(shop_params)
-       redirect_to shop_path(@shop)
-    else
-      render "shops/edit"
-    end
   end
 
   private
