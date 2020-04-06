@@ -1,47 +1,54 @@
-<div class= "jumbotron jumbotron-fuid concept-section">
-  <div class= "concept_text">
-    <div class= "container text-center">
-      <h2>Blend CAFEとは？</h2>
-      <p>Blend CAFEは　「humanity × taste」<br>
-        投稿する「人」に注目した飲食店情報の投稿サイト。<br>
-        様々な価値観を持つ人が共感し、繋がりその人の食を知る。<br>
-        お店への評価ではなく、投稿している人の価値観を軸に飲食店の情報を共有できます。</p>
+<div class= "about_contents">
+<div class= "about_contents_cover">
+  <div class= "jumbotron jumbotron-fuid concept-section">
+    <div class= "concept_text">
+      <div class= "container about_top_text_items">
+        <h1>Blend CAFEとは？</h1>
+        <p>様々なカフェがBlend Coffeeのように混ざり合いできているBlend CAFE<br>
+            Blend CAFEは新しいカフェとの出会いを探すことのできるサイトです。<br>
+            お洒落な雰囲気、落ち着いて作業ができる場所、ゆっくり一休みできるカフェ…などなど、自分が気になるカフェと出会うことができます。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class= "about_main_section">
+    <div class= "about_main_section_cover">
+      <div class= "container">
+        <div class= "row how_to_section_title">
+          <h1>使い方</h1>
+        </div>
+        <div class= "row how_to_sections how_to_sec1">
+          <div class= "col-6 how_to_sections_text">
+            <h2>人と繋がる</h2>
+            <p>気になる人と繋がってみてください。<br>
+              とりあえずフォローしてみるもよし、素敵な写真から繋がるもよし、どんどん輪を広げてみましょう。<br>
+              フォローすることでその人の投稿からお店を探すことができるようになります。<br>
+              また、その人がオススメしているお店やその人のお気に入りの投稿からもあなたにぴったりの出会いがあるかもしれません。
+            </p>
+          </div>
+          <div class= "col-6 how_to_sections_img how_to_sec_img1">
+            <%= image_tag "about-section1.jpg", class: "rounded-circle", size: "350x350" %>
+          </div>
+        </div>
+        <div class= "row how_to_sections how_to_sec2">
+          <div class= "col-6 how_to_sections_img how_to_sec_img2">
+            <%= image_tag "about-section2.jpg", size: "300x300", class: "rounded-circle" %>
+          </div>
+          <div class= "col-6 how_to_sections_text">
+            <h2>お店を探す</h2>
+            <p>お店を地域や名前から探せます。<br>
+              気になるお店を検索してみてください。
+              その気になるお店の投稿をチェックすることでお店の雰囲気がわかるかもしれません。<br>
+              地域ごとに検索することで自分が普段から行く場所や、たまたま立ち寄った場所の近くのカフェを探すこともできます。</p>
+          </div>
+        </div>
+        <div class= "row concept_section_signin_link">
+          <div class= "col-12 text-center mt-3 mb-2">
+            <p><%= link_to "はじめる",new_user_registration_path %></p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-<div class= "about_main_section">
-  <div class= "about_main_section_cover">
-    <div class= "container">
-      <div class= "row how_to_section_title">
-        <h1>　使い方　</h1>
-      </div>
-      <div class= "row how_to_sections">
-        <div class= "col-6 how_to_sections_text">
-          <h3>人と繋がる</h3>
-          <p>Blend CAFEは人との繋がりから始まります。
-            自分が大事にしている価値観や普段の考え方から気なる人、自分に近い人と繋がりましょう。
-            人気のユーザーをとりあえずフォローしてみるもよし、素敵な写真から繋がるもよし、どんどん輪を広げてみましょう。
-          </p>
-        </div>
-        <div class= "col-6 how_to_sections_img">
-          <%= image_tag "about-cheers-img.jpg", class: "img-fluid" %>
-        </div>
-      </div>
-      <div class= "row how_to_sections">
-        <div class= "col-6 how_to_sections_img">
-          <%= image_tag "about-find-img.jpeg", class: "img-fluid" %>
-        </div>
-        <div class= "col-6 how_to_sections_text">
-          <h3>お店を探す</h3>
-          <p>繋がっている人がお勧めしているお店を知ることができます。普段からチェックしてお気に入りにしておくのも良し、急遽その場で近くにフォロワーさんのお勧めのお店がないかをチェックして探してみるも良し。自分が信頼している人のおすすめするお店を見つけることができます。</p>
-        </div>
-      </div>
-      <div class= "row concept_section_signin_link">
-        <div class= "col-12 text-center mt-3 mb-2">
-          <p><%= link_to "はじめる",new_user_registration_path %></p>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
