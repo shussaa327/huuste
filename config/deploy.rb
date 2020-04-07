@@ -2,7 +2,7 @@
 lock "~> 3.12.1"
 
 set :application, "Blend-CAFE"
-set :repo_url, "git@github.com:shussaa327/huuste.git"
+set :repo_url, "git@github.com:shussaa327/Blend-CAFE.git"
 set :deploy_to, "/home/ec2-user/Blend-CAFE"
 set :rbenv_ruby, '2.5.7'
 set :linked_files, %w{config/master.key .env}
