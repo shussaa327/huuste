@@ -11,7 +11,7 @@
         <tr class = "post_comments_content">
           <td class= "post_comment_user">
             <%= link_to user_path(post_comment.user) do %>
-              <%= attachment_image_tag post_comment.user, :user_image, size: "40x40", format: "jpeg", fallback: "default-icon-img.jpeg",class: "rounded-circle" %>
+              <%= attachment_image_tag post_comment.user, :user_image, size: "40x40", format: "jpeg", fallback: asset_path("default-icon-img.jpeg"),class: "rounded-circle" %>
             <% end %>
             <p><%= post_comment.user.name %></p>
           </td>
