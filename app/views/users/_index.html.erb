@@ -6,7 +6,7 @@
         <tr>
           <td height= "50" class= "pl-1 pr-1">
             <%= link_to user_path(user) do %>
-              <%= attachment_image_tag user, :user_image, size: "40x40", format: "jpeg", fallback: asset_path("default-icon-img.jpeg"),class: "rounded-circle" %>
+              <%= attachment_image_tag user, :user_image, size: "40x40", format: "jpeg",class: "rounded-circle" %>
             <% end %>
           </td>
           <td align= "left" class= "w-75 pl-2"><%= link_to user.name, user_path(user) %></td>
