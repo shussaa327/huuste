@@ -2,7 +2,7 @@
  <%= render "shops/show", shop: @shop %>
  <div class= "shop_show_posts_section">
   <% unless @shop_posts.count < 1 %>
-    <h1>snap shots - <%= @shop.name %> -</h1>
+    <h1>snap shots<br>- <%= @shop.name %> -</h1>
     <%= render "posts/index", posts: @shop_posts %>
   <% end %>
  </div>
