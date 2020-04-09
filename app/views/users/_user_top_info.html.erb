@@ -1,7 +1,7 @@
 <div class= "user_top_info_items">
   <div class= "user_show_icon">
     <%= link_to user_path(user) do %>
-      <%= attachment_image_tag user, :user_image, size: "100x100",format: "jpeg",fallback: asset_path("default-icon-img.jpeg"), class: "rounded-circle" %>
+      <%= attachment_image_tag user, :user_image, size: "100x100",format: "jpeg",fallback: "default-icon-img.jpeg", class: "rounded-circle" %>
     <% end %>
     <p><%= user.name %></p>
   </div>

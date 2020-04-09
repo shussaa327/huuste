@@ -48,7 +48,7 @@
         <% if @user_posts.count < 1 %>
           <h6>まだ投稿がありません</h6>
         <% else %>
-          <%  user_post_areas_count(@user).each do |area_name, area_count| %>
+          <%  @user.user_post_areas_count.each do |area_name, area_count| %>
             <div class= "users_show_area_item">
               <p><%= area_name %>(<%= area_count %>)</p>
             </div>
