@@ -15,6 +15,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: {maximum: 10}
   validates :introduction, length: {maximum: 200}
   validates :email, length: {minimum: 5, maximum: 70}
+
   def follow(user_id)
     follower.create(followed_id: user_id)
   end
@@ -42,6 +43,10 @@ class User < ApplicationRecord
 
   def shop_recommendations_count_over?(user)
     user.shop_recommendations.count > 4
+  end
+
+  def user_post_areas_count
+    self.posts.joins(:area).group("areas.area_name").count
   end
 
 end
