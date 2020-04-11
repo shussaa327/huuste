@@ -31,6 +31,8 @@
   
 * デプロイサーバ・・・AWS(EC2, RDS, Route53), Nginx, Puma
 
+* HTTPS化ツール・・・certbot
+
 * 外部API・・・Google Map API
 
 * 機能面での使用gem 
