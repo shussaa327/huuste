@@ -22,13 +22,15 @@
 
 ## :wrench: 技術
 
-* 言語・・・HTML, CSS, Ruby, JavaScript
+* 言語・・・HTML, CSS, Ruby, JavaScript, SQL
 
 * フレームワーク,ライブラリ・・・Ruby on Rails, Bootstrap, jQuery
 
 * データベース・・・MySQL
+
+* インフラ・・・AWS(EC2, EIP, RDS, Route53)
   
-* デプロイサーバ・・・AWS(EC2, RDS, Route53), Nginx, Puma
+* Webサーバ・・・Nginx
 
 * HTTPS化ツール・・・certbot
 
