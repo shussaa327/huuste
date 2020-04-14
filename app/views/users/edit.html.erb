@@ -17,7 +17,9 @@
           <%= attachment_image_tag @user, :user_image, size: "120x120", format: "jpeg", fallback: "default-icon-img.jpeg", class: "rounded-circle" %>
           <label>アイコン画像</label>
           <%= f.attachment_field :user_image %>
+          <% unless @user.email == "guest@guest"  %>
           <%= link_to "退会する",user_path(@user), method: :delete, "data-confirm" => "本当に退会しますか？", class: "btn btn-danger" %>
+          <% end %>
         </div>
 
         <div class= "col-8 user_text_form_edit_section">

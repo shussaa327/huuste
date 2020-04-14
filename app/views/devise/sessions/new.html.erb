@@ -25,6 +25,8 @@
           <%= f.submit "ログイン", class: "pt-1 pb-1 pl-2 pr-2 btn-primary rounded" %>
         </div>
       <% end %>
+      <p class= "pb-2">ゲストでのログインはこちら↓</p>
+      <%= link_to 'ゲストログイン', homes_guest_sign_in_path, method: :post %>
       <p class= "pb-2">アカウントをお持ちでない方はこちら↓</p>
       <%= render "devise/shared/links" %>
     </div>
