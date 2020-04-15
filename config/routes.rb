@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 root "homes#top"
 get "about" => "homes#about"
-post 'homes/guest_sign_in' => 'application#new_guest'
 post "follow/:id" => "relationships#follow", as: "follow"
 post "unfollow/:id" => "relationships#unfollow", as: "unfollow"
 
