@@ -26,6 +26,9 @@
         </div>
       <% end %>
       <p class= "pb-2">アカウントをお持ちでない方はこちら↓</p>
+      <div class= "guest_login_link pb-3">
+        <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "h5" %>
+      </div>
       <%= render "devise/shared/links" %>
     </div>
   </div>
