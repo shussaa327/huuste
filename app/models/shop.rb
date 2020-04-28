@@ -1,6 +1,5 @@
 class Shop < ApplicationRecord
   has_many :posts
-  has_many :post_images
   has_many :shop_recommendations, dependent: :destroy
   belongs_to :user, optional: true
   belongs_to :area

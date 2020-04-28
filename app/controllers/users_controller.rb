@@ -30,6 +30,16 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
+  def new_guest
+    user = User.find_or_create_by(email: "guest@guest.com") do |user|
+      user.name = "guest_user"
+      user.email = "guest@guest.com"
+      user.password = SecureRandom.urlsafe_base64
+    end
+    sign_in user
+    redirect_to root_path
+  end
+
   private
 
   def user_params
