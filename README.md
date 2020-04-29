@@ -1,5 +1,12 @@
-# カフェの投稿サイト
-<img width="1440" alt="スクリーンショット 2020-04-11 17 11 10" src="https://user-images.githubusercontent.com/48595835/79038836-85da7500-7c17-11ea-93f7-b842d416e21b.png">
+# Blend CAFE
+カフェ情報の投稿サイトです。  
+
+**URL**
+https://blend-cafe.site
+  
+<img width="1440" alt="スクリーンショット 2020-04-11 17 11 10" src="https://user-images.githubusercontent.com/48595835/79038836-85da7500-7c17-11ea-93f7-b842d416e21b.png">　　
+* ログイン画面からゲストログインが可能です。ご自由にお使いください
+* ゲストアカウントは退会できませんのでご了承ください
 
 ## :green_book: 機能
 
