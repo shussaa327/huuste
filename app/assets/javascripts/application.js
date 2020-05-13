@@ -24,8 +24,8 @@ $(document).on("turbolinks:load", function(){
 
   $('.tab_menu a').on('click', function(){
     $(".tab_contents .tab").hide();
-    $(".tab_menu .active").removeClass("active");
-    $(this).addClass("active");
+    $(".tab_menu .a_active").removeClass("a_active");
+    $(this).addClass("a_active");
     $($(this).attr("href")).show();
     return false;
   });
